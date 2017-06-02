@@ -1,0 +1,1073 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>IPv6을 테스트합니다.</title>
+
+  <meta name="description" content='이것은 IPv6 준비를 위한 연결 및 브라우저를 테스트할 뿐만 아니라 현재 IPV4와 IPv6 주소를 표시합니다.' />
+
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="SHORTCUT ICON" href="images/favicon.ico" />
+  <link rel="stylesheet" href="index.css%3Fversion=1.1.548.css" type="text/css" />
+  <link rel="apple-touch-icon" href="images/knob_info.png"/> 
+  <meta property="og:image" content="http://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="site/config.js%3Fversion=1.1.548"></script>
+   <script type="text/javascript"  src="index.js.ko_KR%3Fversion=1.1.548"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+  
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="index.html" 
+ id="current" >IPv6 테스트</a></li>
+
+
+
+<li><a href="faq.html" 
+>FAQ</a></li>
+
+
+
+<li><a href="mirrors.html" 
+>미러</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="stats.html" tabname="stats"
+  >통계</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="locale.html">
+<img src="images/icon_987_red.png" height="32" border="0" />
+</a>
+</div>
+
+</div>
+
+
+
+<h1 id="title" style="margin-bottom:0;">
+  IPv6 연결 테스트
+<span id="replay" class="replay" style="display:none">
+  (재생)
+</span>
+</h1>
+
+<div id="is_index_page"><!-- used to identify if we're showing index page--></div>
+
+<!-- Do I ever hate the ways that browsers break things with javascript disabled. Can't even count on noscript tags. !-->
+
+<div id="noscript">
+  <p id="score0">JavaScript 필수</p>
+  
+  
+  <p>테스트를 수행하려면 이 사이트에 JavaScript이 필요할 뿐만 아니라 교차 사이트 스크립트를 끌어올 수 있는 기능이 필요합니다.</p>
+  <p>이 메시지가 사라지지 않는 경우 브라우저의 확장 프로그램이나 플러그 인, 또는 명시적인 브라우저 설정에 의해서 JavaScript가 사용 안 함으로 설정되었음을 의미합니다.</p>
+
+  <p id="score1">NoScript를 사용하고 계신가요?</p>
+  <p>
+   만약 당신이 파이어폭스 애드온을 사용 한다면, 당신은 "일시적으로 이 페이지를 모두 허용" 기능을 사용하여야 합니다. 당신은 모든 작업마다 이 행동을 <b>두 번</b> 수행해야 합니다. 혹은, 이 사이트에서의 작업이 끝날 때까지 NoScript를 완전히 끄십시오.</p>
+
+  <p>대신에 IPv4, IPv4+IPv6 및 IPv6에 대해 통과/실패 결과를 빠르게 제공하는 <a href="simple_test.html">간단한 테스트</a>를 볼 수 있도록 선택할 수 있습니다. 하지만 진단 정보는 거의 없습니다.</p>
+</div>
+
+
+<script type="text/javascript">
+ jQuery("#noscript").hide();
+ try {
+     if (MirrorConfig) {
+         GIGO.test_ipv6_gui();
+     }
+ } catch (e) {
+     // 0;
+ }
+</script>
+
+
+
+
+<div class="tabbox_outside">
+
+<div id="tabnavcontainer">
+<ul id="tabnavlist">
+
+<li id="tabbutton_helpdesk_link"><a href="index.html.ko_KR.html#" class="tabbutton_helpdesk"  onclick='return GIGO.tabnav("helpdesk")'>헬프데스크</a></li>
+<li><a href="index.html.ko_KR.html#" class="tabbutton_main" id="tabcurrent" onclick='return GIGO.tabnav("main")'>요약</a></li>
+<li><a href="index.html.ko_KR.html#" class="tabbutton_tests"  onclick='return GIGO.tabnav("tests")'>테스트 상세</a></li>
+<li style="display:none" id="tabbutton_mail_link"><a href="index.html.ko_KR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>결과 공유하기 / 문의</a></li>
+
+<li id="faqtablink" style="display:none" class="navright"><a href="index.html.ko_KR.html#" class="tabbutton_faq"  onclick='return GIGO.tabnav("faq")'>FAQ</a></li>
+<li id="popuptablink" style="display:none" class="navright"><a href="index.html.ko_KR.html#" class="tabbutton_popup"  onclick='return GIGO.tabnav("popup")' id="href_popup">도움말 팝업</a></li>
+
+<li style="display:none" id="debuglink"><a href="index.html.ko_KR.html#" class="tabbutton_debug"  onclick='return GIGO.tabnav("debug")'>디버그</a></li>
+<li style="display:none" id="siteslink"><a href="index.html.ko_KR.html#" class="tabbutton_sites"  onclick='return GIGO.tabnav("sites")'>다른 IPv6 웹사이트</a></li>
+
+
+
+</ul>
+</div>
+
+
+
+  <div class="tabbox_middle">
+    <div class="tabbox_inside" id="tabbox_inside">
+      <div id="tab_main" style="display:block">
+        <div id="tab_main_inside">
+        
+  
+
+  <div id="your_ipv4"></div>
+
+  <div id="your_ipv6"></div>
+
+  <div id="your_isp"></div>
+
+
+  <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+  <div id="results"></div>
+
+  <div id="results_eof"></div>
+  <div id="survey"></div>
+
+
+        </div>
+      </div>
+      <div id="tab_tests" style="display:none">
+        <div id="tab_tests_simple" style="display:block">
+          <!-- START tests.inc -->
+
+
+<div>
+  <p><b>이 테스트의 작동 방식:</b> 브라우저는 일련의 URL로 연결됩니다. 성공 및 실패의 조합은 게시자들이 IPv6에 웹 사이트를 제공하기 시작할 때를 대비한 준비 상태를 알려줍니다.</p>
+  <p>확인하려면 클릭합니다. 
+   <a href="index.html.ko_KR.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("tech")'>기술 정보</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary="tests run, and pass/fail">
+      <tr>
+        <td nowrap="nowrap">IPv4 DNS 레코드 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_a">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">IPv6 DNS 레코드 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_aaaa">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">이중 스택 DNS 레코드 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ds">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">이중 스택 DNS 및 대규모 패킷 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_dsmtu">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">DNS 없이 IPv4 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv4">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">DNS 없이 IPv6 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv6">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">IPv6 대규모 패킷 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6mtu">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">ISP의 DNS 서버에서 IPv6가 사용되는 경우 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6ns">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">IPv4 서비스 공급자 찾기</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn4">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">IPv6 서비스 공급자 찾기</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn6">
+            보류 중
+          </div>
+        </td>
+
+      </tr>
+
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">버그가 많은 DNS 테스트</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_buggydns1">
+            보류 중
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+<div><p>
+  확인하려면 클릭합니다.
+  <a href="index.html.ko_KR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>결과 공유하기 / 문의</a></p></div>
+
+
+<!-- STOP tests.inc -->
+
+
+        </div>
+        <div id="tab_tests_tech" style="display:none">
+          <!-- START tech.inc -->
+
+
+<div>
+  <p><b>이 테스트의 작동 방식:</b> 브라우저는 일련의 URL로 연결됩니다. 성공 및 실패의 조합은 게시자들이 IPv6에 웹 사이트를 제공하기 시작할 때를 대비한 준비 상태를 알려줍니다.</p>
+  <p>확인하려면 클릭합니다. 
+     <a href="index.html.ko_KR.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("simple")'>테스트 상세</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary=
+    "technical details showing ipv6 browser test">
+      <tr>
+        <td nowrap="nowrap">
+
+          <div>
+             IPv4 DNS 레코드 테스트
+          </div>
+
+          <div id="test_a">
+            보류 중
+          </div>
+
+          <div id="results_a">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_a">
+            DNS에 단지 한 개의 레코드가 있는 개체를 불러옵니다. 이것은 IPv4를 사용할 것으로 예상됩니다. IPv6 전용 사용자는 공급자가 NAT64/DNS64 또는 프록시 솔루션을 사용한 경우 여전히 이것에 접속할 수도 있습니다.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            IPv6 DNS 레코드 테스트
+          </div>
+
+          <div id="test_aaaa">
+            보류 중
+          </div>
+
+          <div id="results_aaaa">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_aaaa">
+            DNS에 단지 AAAA 레코드만 있는 개체를 불러옵니다. 이것은 IPv6을 사용할 것으로 예상됩니다. 아직 IPv6 인터넷 상에 있지 않는 사용자는 이 실패를 볼 가능성이 높습니다. 빠르게 실패하는 한 현재로는 괜찮을 것입니다.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            이중 스택 DNS 레코드 테스트
+          </div>
+
+          <div id="test_ds">
+            보류 중
+          </div>
+
+          <div id="results_ds">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ds">
+            <div>이것은 가장 중요한 테스트입니다. 이로써 브라우저가 IPv4 및 IPv6 레코드가 모두 게시된 사이트에 접속할 수 있는지 확인합니다. IPv4 전용 호스트는 (IPv4를 사용하여) 문제 없이 연결되어야 합니다.</div>
+            <p><b>이 테스트가 실패하거나 시간을 초과하는 경우 게시자가 IPv6에 사이트를 제공하기 시작함에 따라 중대한 문제를 예상할 수 있습니다.</b></p>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             이중 스택 DNS 및 대규모 패킷 테스트
+          </div>
+
+          <div id="test_dsmtu">
+            보류 중
+          </div>
+
+          <div id="results_dsmtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_dsmtu">
+            이중 스택 서버에 접속할 수 있으며(DS 테스트처럼), 이 연결에서 대규모 패킷을 송수신할 수 있음을 입증합니다. 어떤 이유로든 이 테스트에서 시간이 초과하는 경우 World IPv6 Day에 대한 문제를 나타냅니다.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             DNS 없이 IPv4 테스트
+          </div>
+
+          <div id="test_ipv4">
+            보류 중
+          </div>
+
+          <div id="results_ipv4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv4">
+            이것은 리터럴 IPv4 숫자 주소로 연결을 시도합니다. 이것은 대부분의 사람들이 IPv6 전용을 실행하지 않는 한 작동해야 합니다. 첫 번째 테스트는 작동했으나 이것이 실패한 경우 공급자가 NAT64/DNS64를 사용하고 있을 가능성이 있습니다. 숫자 IP 주소 대신에 호스트 이름을 사용하여 연결하는 것만을 시도해야 합니다.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            DNS 없이 IPv6 테스트
+          </div>
+
+          <div id="test_ipv6">
+            보류 중
+          </div>
+
+          <div id="results_ipv6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv6">
+            이것은 리터럴 IPv6 16진수 주소로 연결을 시도합니다. 이 테스트의 주요 목적은 연결을 위해 DNS를 불러 오는 기능에서 IPv6 연결을 분리하는 것입니다. 두 번째 목적은 Teredo를 사용 중인지 확인하는 것입니다. 일부 시스템은 URL에 IPv6 주소가 있을 때만 Teredo를 사용할 수 있습니다.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            IPv6 대규모 패킷 테스트
+          </div>
+
+          <div id="test_v6mtu">
+            보류 중
+          </div>
+
+          <div id="results_v6mtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6mtu">
+            대규모 패킷의 IPv6 요청이 작동하는지 입증합니다. 이 테스트의 시간이 초과하지만 다른 IPv6 테스트가 작동하는 경우 어쩌면 IP 터널을 포함하는 PMTUD 문제가 있을 수 있음을 시사합니다.
+            ICMPv6 유형 2("패킷이 너무 큼") 메시지가 방화벽에 의해서 필터링되지 않는지 다시 확인합니다.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             ISP의 DNS 서버에서 IPv6가 사용되는 경우 테스트
+          </div>
+
+          <div id="test_v6ns">
+            보류 중
+          </div>
+
+          <div id="results_v6ns">
+            -
+          </div>
+          <div>
+           (이것은 보너스 점수임)
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6ns">
+            이것은 호스트의 테스트 대신에 ISP 변환기의 테스트입니다. 이 테스트를 통과하는 경우 DNS 서버(종종 ISP에 의해 실행)가 인터넷에서 신뢰할 만한 IPV6 전용 DNS 서버에 접속할 수 있습니다. 현재 IPv6을 통해 사이트에 연결하는 것은 중요하지 않습니다.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             IPv4 서비스 공급자 찾기
+          </div>
+
+          <div id="test_asn4">
+            보류 중
+          </div>
+
+          <div id="results_asn4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn4">
+            IPv4를 위해 어떤 인터넷 서비스 공급자를 사용하는지 파악합니다. 이것은 현지 시장에서 볼 수 있는 마케팅 이름과는 다를 수 있습니다. 또는 이전 회사 이름을 반영할 수 있습니다. 표시된 이름은 네트워크 운영자 공동체에 알려진 이름을 반영합니다.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             IPv6 서비스 공급자 찾기
+          </div>
+
+          <div id="test_asn6">
+            보류 중
+          </div>
+
+          <div id="results_asn6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn6">
+            IPv6를 위해 어떤 인터넷 서비스 공급자를 사용하는지 파악합니다. IPv4 이름과 IPv6 이름이 일치하지 않는 경우 터널을 사용하고 있거나, IPv6을 위해 일종의 타사 공급자를 사용하고 있을 수 있습니다.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">
+          <div>
+            버그가 많은 DNS 테스트
+          </div>
+
+          <div id="test_buggydns1">
+            보류 중
+          </div>
+
+          <div id="results_buggydns1">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_buggydns1">
+            잘못된 형식의 AAAA 레코드에 대한 쿼리입니다. 일부 라우터는 이것을 "A" 레코드로 잘못 처리하며 첫 번째 32비트만을 유지합니다. 이 테스트의 예상 결과는 연결에 실패하는 것입니다.
+          </div>
+        </td>
+      </tr>
+      
+      
+    </table>
+
+  <div id="tech_eof"></div>
+
+<div>
+
+  <hr/>
+  <p> 요약 결과에 문제가 나타난 경우 사용자(또는 기술 지원팀)은 위의 정보를 사용하여 문제를 진단할 수 있습니다. 각 테스트 URL 및 그 결과는 왼쪽에 표시됩니다. 오른쪽에는 해당 URL이 테스트하는 항목의 설명을 볼 수 있습니다.</p>
+  <p> 요약 결과에 문제가 나타난 경우 사용자(또는 기술 지원팀)은 위의 정보를 사용하여 문제를 진단할 수 있습니다. 각 테스트 URL 및 그 결과는 왼쪽에 표시됩니다. 오른쪽에는 해당 URL이 테스트하는 항목의 설명을 볼 수 있습니다.</p>
+
+</div>
+
+<div><p>
+  확인하려면 클릭합니다.
+  <a href="index.html.ko_KR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>결과 공유하기 / 문의</a></p></div>
+
+<!-- STOP tech.inc -->
+
+
+        </div>
+      </div>
+      <div id="tab_mail" style="display:none">
+        <!--START mail.inc -->
+
+  <div id="comments" style="display:block">
+
+    <div id="comments_wanted" style="display:none">
+      <p><b>귀하의 특정 구성이 흥미롭습니다.</b> 우리는 test-ipv6.com 코드를 개선하기 위해 항상 노력하고 있습니다. 브라우저 및 컴퓨터 설정에 관한 자세한 정보를 제공하시겠습니까? 도와주신다면 시스템을 복구하는 방법을 문서화할 수 있습니다.</p>
+    </div>
+
+    <div id="comments_unwanted" style="display:block">
+      <p>이 양식에 댓글을 남기고 우려를 표명하거나 질문을 할 수 있습니다. 테스트 결과는 자동으로 포함됩니다.
+      또한 IP 주소는 질문에 답변하기 위해 사이트 관리자와 공유됩니다.
+      이 양식을 사용하면 동의를 뜻합니다.      
+      </p>
+    </div>
+    
+    <div id="comments_faq" style="display:none">
+      <p><span id="comments_faq_link"></span>일련의 정확한 결과에 대해 <b>(FAQ)</b> 페이지를 사용할 수 있습니다. 먼저 읽고 난 후에 댓글을 남기십시오. 이미 많은 질문에 대한 답변이 나열되어 있습니다. 추가 질문, 댓글 또는 우려 사항이 있는 경우 이 양식을 사용하십시오.</p>
+    </div>
+    
+   <!-- START mail-language.inc -->
+
+    <div>
+      <p>가능한 경우 댓글을 영어로 남겨 주십시오.</p>
+    </div>
+
+<!-- STOP mail-langauge.inc -->
+
+
+
+    <div>
+
+      <p>테스트에 관한 문제를 보고하거나 결과에 대해 도움을 요청하는 경우 모든 필수 정보를 최대한 기입하십시오. 일반적인 댓글을 남기는 경우 어느 정도 보고할 지 현명하게 판단하십시오.</p>
+
+      <p class="subtle">감사합니다.<br/><a mailto=site.mailto href="http://test-ipv6.com/-"><span lookup=site.contact>-</span> &lt;<span lookup=site.mailto>-</span>&gt;</a></p>
+
+    </div>
+
+    <div>
+      <form id="commentform" action="http://test-ipv6.com/comment.php" method="post" enctype="multipart/form-data" name="commentform" onsubmit="return GIGO.validate_form(this)" >
+
+        <input type="hidden" name="form_tab_main" value="" />
+        <input type="hidden" name="form_config" value="" />
+        <input type="hidden" name="form_results" value="" />
+        <input type="hidden" name="a" value="" /> 
+        <input type="hidden" name="aaaa" value="" /> 
+        <input type="hidden" name="ds4" value="" /> 
+        <input type="hidden" name="ds6" value="" /> 
+        <input type="hidden" name="ipv4" value="" />
+        <input type="hidden" name="ipv6" value="" />
+        <input type="hidden" name="v6mtu" value="" />
+        <input type="hidden" name="v6ns" value="" />
+        <input type="hidden" name="ip4" value="" />
+        <input type="hidden" name="ip6" value="" /> 
+        <input type="hidden" name="dsmtu" value="" />
+        <input type="hidden" name="ip6subtype" value="" /> 
+        <input type="hidden" name="tokens" value= "" /> 
+        <input type="hidden" name="score_transition" value="" /> 
+        <input type="hidden" name="score_strict" value="" /> 
+        <input type="hidden" name="nobots" value="" />
+	<input type="hidden" name="subdomain" />
+
+
+<table summary="enable comment form">
+          <tr>
+            <td>
+              <b>댓글의 목적</b>:
+            </td><td>
+           
+            <select name="purpose" onchange='jQuery("#contact_form").show();'>
+<option value="-">댓글의 목적</option>
+<option value="questions">테스트 결과에 관한 질문</option>
+<option value="bug">진단 버그 보고</option>
+<option value="suggestion">제안</option>
+<option value="cheersjeers">갈채 또는 야유</option>
+</select>
+</td>
+          </tr>
+
+</table>
+
+
+
+        <table summary="contact form" id="contact_form" style="display:none">
+
+
+
+
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>연락을 원하는 경우 이메일 주소입니다. <i>응답을 원하는 경우 필수입니다.</i></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" name="contact" /></td>
+          </tr>
+
+
+          <tr>
+            <td>유용할 만한 모든 정보(사용 중인 라우터, 또는 방해하는 방화벽, 또는 사용 중인 프록시의 유형 등)입니다. 여기에는 일반적인 피드백이 포함됩니다.</td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="notes" rows="8" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div id="help_plugins" style="display:none">
+                JavaScript 기반 테스트가 실패한 것으로 나타납니다. 이것은 브라우저 플러그 인 또는 확장 프로그램에 관련되었을 수 있습니다. 이 브라우저에서 사용하고 있는 브라우저 플러그 인 및 확장 프로그램을 표시하십시오.
+              </div>
+
+              <div id="help_generic" style="display:none">
+                기술적인 역량이 있는 경우 다음 명령의 출력을 잘라내기/붙여넣기 하십시오:
+                <br/>
+                <code>netstat -nr</code><br/>
+                <code>ifconfig -a</code><br/>
+                이 명령의 출력을 아래의 상자에 복사합니다. 이것은 질문에 관련된 어떠한 이론을 확인/거부하는 데 도움이 됩니다.
+              </div>
+
+              <div id="help_linux" style="display:none">
+                기술적인 역량이 있는 경우 다음 명령의 출력을 잘라내기/붙여넣기 하십시오:
+                <br/>
+                <code>ip -f inet6 route show</code> <br/>
+                <code>ip -f inet6 addr</code> <br/>
+                이 명령의 출력을 아래의 상자에 복사합니다. 이것은 질문에 관련된 어떠한 이론을 확인/거부하는 데 도움이 됩니다.
+              </div>
+
+              <div id="help_windows" style="display:none">
+                기술적인 역량이 있는 경우 "명령 프롬프트" 또는 "cmd" 창을 열고 이 3가지의 명령을 실행합니다.
+		<br/>
+                <code>  ipconfig /all</code><br/>
+                <code>  netsh interface ipv6 show teredo</code><br/>
+                <code>  netsh interface ipv6 show route</code><br/>
+                이 명령의 출력을 아래의 상자에 복사합니다. 이것은 질문에 관련된 어떠한 이론을 확인/거부하는 데 도움이 됩니다.
+              </div>
+
+ 
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="comments" rows="10" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="submit" value="결과 보내기" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+<!-- STOP mail.inc -->
+
+
+      </div>
+      
+      <div id="tab_helpdesk" style="display:none">
+        <!--START helpdesk.inc -->
+
+<div id="helpdesk" style="display:block">
+
+    <div id="helpdesk_content">
+
+      <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+      <p>테스트가 완료되면 기술 지원팀 정보가 따라옵니다.</p>
+    </div>
+
+</div>
+
+<p></p>
+<p>
+<span style="font-size: x-small">
+More information about this page, including how to bookmark it:
+<a href="faq_helpdesk.html">faq_helpdesk.html</a>.</span>
+</p>
+
+
+
+<div id=replayurldiv  style="display:none">
+<hr/>
+<div>
+<p>
+인터넷 기술 지원팀에서 '결과 URL'을 요청하는 경우 다음 URL을 복사하여 붙여 넣으십시오.
+이로써 현재의 숫자 인터넷 프로토콜 주소를 공유하게 됨에 유의하십시오.
+이 링크를 포럼과 같은 공용 웹 사이트에 게시하는 것은 좋지 않습니다.
+</p>
+<div id=replayurl>-</div>
+<p>
+대부분의 컴퓨터에서 URL을 오른쪽 클릭하여 '복사'를 선택할 수 있습니다.
+</p>
+</div>
+</div>
+
+
+
+
+
+<!-- STOP helpdesk.inc -->
+
+
+      </div>
+      <!-- Hide these until needed -->
+      <div id="tab_faq" style="display:none">
+      </div>
+      <div id="tab_popup" style="display:none">
+      </div>
+      
+      
+      <div id="tab_debug" style="display:none">
+        
+  <div id="debug" style="display:block">
+
+  
+
+
+
+  <div>Debug info follows.  If requested, you can  <a href="index.html.ko_KR.html#" class="tabbutton_tests"  onclick='return GIGO.debuggercomments()'>Send this debug info</a> for analysis. </div>
+
+  <div id="debug_dump"></div>
+
+  <div id="debug_eof"></div>
+
+  </div>
+
+
+      </div>
+
+      <div id="tab_sites" style="display:none">
+        
+  <div id="other_sites" style="display:block">
+
+
+  <div class="answer">
+    <b>사용자에게 IPv6이 있기 때문에</b> 인터넷에서 다른 IPv6 웹 사이트에 접속할 수 있는지 여부를 확인할 수 있도록 이 탭을 추가했습니다. 끊어진 사이트가 있는 경우 해당 ISP에 알리는 것이 좋습니다. ISP의 경우 정보 링크를 클릭하여 사용 중인 테스트 URL을 확인할 수 있습니다.
+  </div>
+
+  <div class="answer">
+    <p><b>힌트</b>: 열은 정렬할 수 있습니다(첫 번째 행을 클릭). <a href="index.html.ko_KR.html#" onclick="GIGO.test_sites(2); return false;"> 여기를 클릭</a>하여 자신이 있는 곳에서 미러까지의 연결을 다시 확인할 수 있습니다.
+    </p>
+  </div>
+    
+    
+    <div id="sitestablediv">(generated by javascript)</div>
+  
+<!--   GIGO.test_contents(2); -->
+
+                 
+
+  <div class="answer">
+    <p>기본 검사를 위해 이 목록에 추가되는 것은 아주 쉽습니다. 2개의 이미지 URL(하나는 IPv4 전용, 다른 하나는 IPv6 전용)을 Jason Fesler &lt;jfesler@gigo.com&gt;에게 보내십시오. 또한 일반 웹 사이트 주소 및 조직 이름을 보내십시오.
+    </p>
+  </div>
+
+  <div class="answer">
+    전체 미러(공용 또는 개인용)를 환영하며 감사히 여기겠습니다. 자세한 내용은 <a href="https://github.com/falling-sky/source/wiki">위키</a>를 참조하십시오.
+  </div>
+
+  
+  </div>
+
+
+      </div>
+   
+
+    </div>
+  </div>
+</div>
+
+
+<center>
+<div id="social">
+<div id="facebook_like"></div>
+<div id="twitter_tweet"></div>
+</div>
+</center>
+
+<div id="logo">
+ <div id="logo_img"></div>
+ <div id="logo_operator"></div>
+</div>
+
+
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2016 Jason Fesler. 모든 권리 보유.  Version 1.1.548 (19ae914)<br/>
+
+ <a href="mirrors.html">미러</a> |
+<!-- <a href="mission.html">임무</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">원본</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">이메일 주소</a>
+ - &nbsp; - 
+<a href="attributions.html">속성</a>
+  
+<span class="ghost">
+  |  <a href="index.html.ko_KR.html#" onclick=" GIGO.showdebug(); return false;">Debug</a> 
+</span>
+
+
+
+  |
+
+<a href="index.html.ko_KR.html#" onclick="return help_page('locale.html','Locale')">
+<img src="images/icon_987_red.png" height="20" border="0" />
+ko_KR 
+</a>
+97.82%
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+이곳은 test-ipv6.com의 미러 사이트 입니다. 여기에 보여지는 것들은 미러 소유자의 내용을 비추거나 비추지 않을 수 있습니다.
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() { 
+  try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+  });   
+  </script>
+
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+

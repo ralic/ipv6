@@ -1,0 +1,1073 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hr" xml:lang="hr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Provjera IPv6 veze</title>
+
+  <meta name="description" content='Ova stranica provjerava pripremljenost vašeg preglednika i Internet veze za IPv6, te prikazuje vašu trenutnu IPv4 i IPv6 adresu.' />
+
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="SHORTCUT ICON" href="images/favicon.ico" />
+  <link rel="stylesheet" href="index.css%3Fversion=1.1.548.css" type="text/css" />
+  <link rel="apple-touch-icon" href="images/knob_info.png"/> 
+  <meta property="og:image" content="http://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="site/config.js%3Fversion=1.1.548"></script>
+   <script type="text/javascript"  src="index.js.hr_HR%3Fversion=1.1.548"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+  
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="index.html" 
+ id="current" >IPv6 provjera</a></li>
+
+
+
+<li><a href="faq.html" 
+>Često postavljena pitanja</a></li>
+
+
+
+<li><a href="mirrors.html" 
+>Kopije stranice</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="stats.html" tabname="stats"
+  >stats</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="locale.html">
+<img src="images/icon_987_red.png" height="32" border="0" />
+</a>
+</div>
+
+</div>
+
+
+
+<h1 id="title" style="margin-bottom:0;">
+  Provjera IPv6 veze
+<span id="replay" class="replay" style="display:none">
+  (Replay)
+</span>
+</h1>
+
+<div id="is_index_page"><!-- used to identify if we're showing index page--></div>
+
+<!-- Do I ever hate the ways that browsers break things with javascript disabled. Can't even count on noscript tags. !-->
+
+<div id="noscript">
+  <p id="score0">JavaScript potreban</p>
+  
+  
+  <p>Ova stranica zahtijeva JavaScript, kao i mogućnost povlačenja cross-site skripti radi obavljanja testiranja.</p>
+  <p>Ako ova poruka ne nestane, znači da je JavaScript onemogućen, bilo zbog plugin-a ili ekstenzije u Vašem pregledniku, ili zbog izričitih postavki preglednika.</p>
+
+  <p id="score1">Koristite li NoScript?</p>
+  <p>
+   If you use this Firefox add-on, you'll need to "Temporarily allow all this page". You will need to do this <b>twice</b> for everything to work. Alternately, disable NoScript entirely until you are done with this site.</p>
+
+  <p>You can opt instead to view the <a href="simple_test.html">simple test</a>, which will give you a quick pass/fail for IPv4, IPv4+IPv6, and IPv6. It will however offer little diagnostic information.</p>
+</div>
+
+
+<script type="text/javascript">
+ jQuery("#noscript").hide();
+ try {
+     if (MirrorConfig) {
+         GIGO.test_ipv6_gui();
+     }
+ } catch (e) {
+     // 0;
+ }
+</script>
+
+
+
+
+<div class="tabbox_outside">
+
+<div id="tabnavcontainer">
+<ul id="tabnavlist">
+
+<li id="tabbutton_helpdesk_link"><a href="index.html.hr_HR.html#" class="tabbutton_helpdesk"  onclick='return GIGO.tabnav("helpdesk")'>For the Help Desk</a></li>
+<li><a href="index.html.hr_HR.html#" class="tabbutton_main" id="tabcurrent" onclick='return GIGO.tabnav("main")'>Sažetak</a></li>
+<li><a href="index.html.hr_HR.html#" class="tabbutton_tests"  onclick='return GIGO.tabnav("tests")'>Izvršene provjere</a></li>
+<li style="display:none" id="tabbutton_mail_link"><a href="index.html.hr_HR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Dijeli rezultate / Kontakt</a></li>
+
+<li id="faqtablink" style="display:none" class="navright"><a href="index.html.hr_HR.html#" class="tabbutton_faq"  onclick='return GIGO.tabnav("faq")'>Vaša često postavljena pitanja</a></li>
+<li id="popuptablink" style="display:none" class="navright"><a href="index.html.hr_HR.html#" class="tabbutton_popup"  onclick='return GIGO.tabnav("popup")' id="href_popup">Prozor pomoći</a></li>
+
+<li style="display:none" id="debuglink"><a href="index.html.hr_HR.html#" class="tabbutton_debug"  onclick='return GIGO.tabnav("debug")'>Ispravljanje grešaka</a></li>
+<li style="display:none" id="siteslink"><a href="index.html.hr_HR.html#" class="tabbutton_sites"  onclick='return GIGO.tabnav("sites")'>Druge IPv6 stranice</a></li>
+
+
+
+</ul>
+</div>
+
+
+
+  <div class="tabbox_middle">
+    <div class="tabbox_inside" id="tabbox_inside">
+      <div id="tab_main" style="display:block">
+        <div id="tab_main_inside">
+        
+  
+
+  <div id="your_ipv4"></div>
+
+  <div id="your_ipv6"></div>
+
+  <div id="your_isp"></div>
+
+
+  <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+  <div id="results"></div>
+
+  <div id="results_eof"></div>
+  <div id="survey"></div>
+
+
+        </div>
+      </div>
+      <div id="tab_tests" style="display:none">
+        <div id="tab_tests_simple" style="display:block">
+          <!-- START tests.inc -->
+
+
+<div>
+  <p><b>Kako rade ove provjere:</b> Vaš preglednik pokušat će pristupiti nizu stranica. Kombinacija uspješnih i neuspješnih pristupa odredit će koliko ste spremni za pristup na IPv6 web stranice.</p>
+  <p>Kliknite da bi ste vidjeli 
+   <a href="index.html.hr_HR.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("tech")'>Tehničke informacije</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary="tests run, and pass/fail">
+      <tr>
+        <td nowrap="nowrap">Provjera sa IPv4 DNS zapisom</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_a">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Provjera sa IPv6 DNS zapisom</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_aaaa">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Provjera sa IPv4/IPv6 DNS zapisom</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ds">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Provjera sa IPv4/IPv6 DNS-om i velikim paketima</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_dsmtu">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Provjera IPv4 adrese bez DNS-a</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv4">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Provjera IPv6 adrese bez DNS-a</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv6">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Provjera velikih IPv6 paketa</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6mtu">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">Provjera koristi li DNS vašeg ISP-a IPv6</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6ns">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">Find IPv4 Service Provider</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn4">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Find IPv6 Service Provider</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn6">
+            u tijeku
+          </div>
+        </td>
+
+      </tr>
+
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">Provjera pokvarenog DNS-a</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_buggydns1">
+            u tijeku
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+<div><p>
+  Kliknite da bi ste vidjeli
+  <a href="index.html.hr_HR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Dijeli rezultate / Kontakt</a></p></div>
+
+
+<!-- STOP tests.inc -->
+
+
+        </div>
+        <div id="tab_tests_tech" style="display:none">
+          <!-- START tech.inc -->
+
+
+<div>
+  <p><b>Kako rade ove provjere:</b> Vaš preglednik pokušat će pristupiti nizu stranica. Kombinacija uspješnih i neuspješnih pristupa odredit će koliko ste spremni za pristup na IPv6 web stranice.</p>
+  <p>Kliknite da bi ste vidjeli 
+     <a href="index.html.hr_HR.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("simple")'>Izvršene provjere</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary=
+    "technical details showing ipv6 browser test">
+      <tr>
+        <td nowrap="nowrap">
+
+          <div>
+             Provjera sa IPv4 DNS zapisom
+          </div>
+
+          <div id="test_a">
+            u tijeku
+          </div>
+
+          <div id="results_a">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_a">
+            Dohvaća stranicu koja ima samo A zapis u DNS-u. Ovaj pristup bi trebao koristiti IPv4 vezu. Korisnici koji imaju samo IPv6 pristup moći će pristupiti takvoj stranici ako njihov ISP koristi NAT64/DNS64 ili web proxy.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Provjera sa IPv6 DNS zapisom
+          </div>
+
+          <div id="test_aaaa">
+            u tijeku
+          </div>
+
+          <div id="results_aaaa">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_aaaa">
+            Dohvaća stranicu koja ima samo AAAA zapis u DNS-u. Ovaj pristup bi trebao koristiti IPv6 vezu. Korisnicima koji još nemaju IPv6 vezu ova provjera će vjerojatno javiti grešku. Greška bi se trebala javiti brzo i to je u redu - barem za sad.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Provjera sa IPv4/IPv6 DNS zapisom
+          </div>
+
+          <div id="test_ds">
+            u tijeku
+          </div>
+
+          <div id="results_ds">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ds">
+            <div>Ovo je najvažnija provjera. Dohvaća se stranica koja ima IPv4 i IPv6 zapise u DNS-u. Korisnici koji imaju samo IPv4 pristup trebali bi se spojiti bez problema (koristeći IPv4 vezu).</div>
+            <p><b>Ako ovaj provjera ne uspije ili traje predugo, možete očekivati značajne probleme kad pružatelji sadržaja počnu koristiti IPv6.</b></p>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Provjera sa IPv4/IPv6 DNS-om i velikim paketima
+          </div>
+
+          <div id="test_dsmtu">
+            u tijeku
+          </div>
+
+          <div id="results_dsmtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_dsmtu">
+            Provjerava radi li dohvat stranice koja ima IPv4 i IPv6 adresu kad se koriste veliki paketu. Ako ova provjera iz bilo kojeg razloga traje predugo, možete očekivati probleme u pristupu stranicama tijekom svjetskog IPv6 dana.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Provjera IPv4 adrese bez DNS-a
+          </div>
+
+          <div id="test_ipv4">
+            u tijeku
+          </div>
+
+          <div id="results_ipv4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv4">
+            Dohvaća stranicu direktnim pristupom na IPv4 adresu. Ovo bi gotovo uvijek trebalo raditi, osim ako koristite samo IPv6 pristup. Ako je prva provjera bila uspješna, a ova nije, to vjerojatno znači da vaš ISP koristi NAT64/DNS64; za spajanje ćete morati koristiti imena računala umjesto IP adresa.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Provjera IPv6 adrese bez DNS-a
+          </div>
+
+          <div id="test_ipv6">
+            u tijeku
+          </div>
+
+          <div id="results_ipv6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv6">
+            Dohvaća stranicu direktnim pristupom na IPv6 adresu. Osnovna svrha ove provjere je nezavisno provjeriti IPv6 povezivost od mogućnosti dohvata DNS zapisa za IPv6. Dodatna svrha je provjereiti je li aktiviran Teredo; neki sustavi mogu koristiti Teredo samo kad se u adresi stranice koristi IPv6 adresa.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Provjera velikih IPv6 paketa
+          </div>
+
+          <div id="test_v6mtu">
+            u tijeku
+          </div>
+
+          <div id="results_v6mtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6mtu">
+            Provjerava rade li IPv6 zahtjevi kad se koriste veliki paketi. Ako ova provjera ne uspije, ali druge IPv6 provjere rade, to upućuje na probleme sa PMTUD; moguće zbog korištenja IP tunela.
+            Double check to make sure that ICMPv6 Type 2 ("Packet Too Big") messages are not filtered by your firewall.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Provjera koristi li DNS vašeg ISP-a IPv6
+          </div>
+
+          <div id="test_v6ns">
+            u tijeku
+          </div>
+
+          <div id="results_v6ns">
+            -
+          </div>
+          <div>
+           (Ovo je dodatna provjera)
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6ns">
+            Provjerava DNS poslužitelj vašeg ISP-a (umjesto provjeranja vašeg računala). Ako je ova provjera uspješna, DNS poslužitelj koji koristite (obično ga održava vaš ISP) uspješno komunicira sa autoritativnim DNS poslužiteljima koji imaju samo IPv6 adresu. Ova provjera (trenutno) nije kritična za pristup stranicama putem IPv6 veze.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Find IPv4 Service Provider
+          </div>
+
+          <div id="test_asn4">
+            u tijeku
+          </div>
+
+          <div id="results_asn4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn4">
+            Attempts to identify what Internet Service Provider you use for IPv4. This may be different from the marketing name you see in your local market; or may reflect a previous company name. The name shown reflects how it is known in the network operator community.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Find IPv6 Service Provider
+          </div>
+
+          <div id="test_asn6">
+            u tijeku
+          </div>
+
+          <div id="results_asn6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn6">
+            Attempts to identify what Internet Service Provider you use for IPv6. When the IPv4 name and the IPv6 name don't match, it may suggest that you're using a tunnel; or some form of third party provider for IPv6.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">
+          <div>
+            Provjera pokvarenog DNS-a
+          </div>
+
+          <div id="test_buggydns1">
+            u tijeku
+          </div>
+
+          <div id="results_buggydns1">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_buggydns1">
+            Provjerava se upit neispravnog AAAA zapisa. Neki usmjerivači pogrešno tumače odgovore kao A zapise i koriste samo prva 32 bita. Da bi se uspješno spojili ova provjera treba prijaviti grešku.
+          </div>
+        </td>
+      </tr>
+      
+      
+    </table>
+
+  <div id="tech_eof"></div>
+
+<div>
+
+  <hr/>
+  <p> Ako se u sažetku rezultata pojavljuju problemi, možete sami (ili uz pomoć vaše tehničke podrške) koristiti gornje informacije za dijagnosticiranje problema. U lijevom stupcu prikazane su adrese korištene u svakoj od provjera. Na desno strani nalazi se opis provjere koja se postiže pristupom na navedene adrese stranica.</p>
+  <p> Stranica sa sažetkom rezultata osvježava se nakon što se izvrši svaka od provjera. Ako sažetak rezultata ne odgovara gore navedenim rezultatima ili trebate dodatnu pomoć slobodno nas kontaktirajte.</p>
+
+</div>
+
+<div><p>
+  Kliknite da bi ste vidjeli
+  <a href="index.html.hr_HR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Dijeli rezultate / Kontakt</a></p></div>
+
+<!-- STOP tech.inc -->
+
+
+        </div>
+      </div>
+      <div id="tab_mail" style="display:none">
+        <!--START mail.inc -->
+
+  <div id="comments" style="display:block">
+
+    <div id="comments_wanted" style="display:none">
+      <p><b>Vaši rezultati su nam bitni..</b> Neprestano pokušavamo poboljšati kod stranice test-ipv6.com. Pristajete li poslate detaljnije informacije o vašem pregledniku i postvakama računala? Uz vašu pomoć možemo za druge korisnike dokumentirati kako da isprave slične greške na svom sustavu.</p>
+    </div>
+
+    <div id="comments_unwanted" style="display:block">
+      <p>Ova forma daje vam mogućnost ostavljanja komentara, primjedbi ili postavljanje pitanja. Rezultati vaših provjera bit će automatski uključeni u poslanu poruku.
+      This includes your IP address, which is shared with the site administrator in order to answer your questions.
+      Use of this form implies consent.      
+      </p>
+    </div>
+    
+    <div id="comments_faq" style="display:none">
+      <p><b>vaše</b> rezultate provjera. Molimo pročitajte ju prije ostavljanja komentara jer su mnoga pitanja već odgovorena. Ako i nakon toga imate pitanje, komentar ili primjedbu slobodno nas kontaktirajte.</p>
+    </div>
+    
+   <!-- START mail-language.inc -->
+
+    <div>
+      <p>Komentare preporučamo ostaviti na hrvatskom jeziku.</p>
+    </div>
+
+<!-- STOP mail-langauge.inc -->
+
+
+
+    <div>
+
+      <p>Ako prijavljujete problem u provjerama ili tražite pomoć u vezi vaših rezultata molimo da što je točnije moguće pošaljete sve tražene podatke. Ako ostavljate općenite komentare, sami prosudite koliko detaljan treba biti opis.</p>
+
+      <p class="subtle">Hvala,<br/><a mailto=site.mailto href="http://test-ipv6.com/-"><span lookup=site.contact>-</span> &lt;<span lookup=site.mailto>-</span>&gt;</a></p>
+
+    </div>
+
+    <div>
+      <form id="commentform" action="http://test-ipv6.com/comment.php" method="post" enctype="multipart/form-data" name="commentform" onsubmit="return GIGO.validate_form(this)" >
+
+        <input type="hidden" name="form_tab_main" value="" />
+        <input type="hidden" name="form_config" value="" />
+        <input type="hidden" name="form_results" value="" />
+        <input type="hidden" name="a" value="" /> 
+        <input type="hidden" name="aaaa" value="" /> 
+        <input type="hidden" name="ds4" value="" /> 
+        <input type="hidden" name="ds6" value="" /> 
+        <input type="hidden" name="ipv4" value="" />
+        <input type="hidden" name="ipv6" value="" />
+        <input type="hidden" name="v6mtu" value="" />
+        <input type="hidden" name="v6ns" value="" />
+        <input type="hidden" name="ip4" value="" />
+        <input type="hidden" name="ip6" value="" /> 
+        <input type="hidden" name="dsmtu" value="" />
+        <input type="hidden" name="ip6subtype" value="" /> 
+        <input type="hidden" name="tokens" value= "" /> 
+        <input type="hidden" name="score_transition" value="" /> 
+        <input type="hidden" name="score_strict" value="" /> 
+        <input type="hidden" name="nobots" value="" />
+	<input type="hidden" name="subdomain" />
+
+
+<table summary="enable comment form">
+          <tr>
+            <td>
+              <b>Vrsta upita</b>:
+            </td><td>
+           
+            <select name="purpose" onchange='jQuery("#contact_form").show();'>
+<option value="-">Vrsta upita</option>
+<option value="questions">Upit o rezultatima provjere</option>
+<option value="bug">Prijava greške sa detaljnim opisom</option>
+<option value="suggestion">Prijedlog</option>
+<option value="cheersjeers">Pohvale ili pokude</option>
+</select>
+</td>
+          </tr>
+
+</table>
+
+
+
+        <table summary="contact form" id="contact_form" style="display:none">
+
+
+
+
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>Vaša adresa elektroničke pošte ako želite da vas kontaktiramo. <i>Obavezna ako želite odgovor.</i></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" name="contact" /></td>
+          </tr>
+
+
+          <tr>
+            <td>Bilo kakve informacije za koje mislite da su korisne (tip uspmjerivača koji koristite, vatrozit ili proxy kroz koji prolazi promet, itd). To uključuje i druge općenite informacije.</td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="notes" rows="8" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div id="help_plugins" style="display:none">
+                Provjere temeljene na javscript-u nisu uspješno završile. To može biti vezano uz dodatke ili proširenja instalirana u vaš preglednik. Molimo navedite koji dodatci i proširenja su aktivni u vašem pregledniku.
+              </div>
+
+              <div id="help_generic" style="display:none">
+                Ako ste tehnički potkovani molimo kopirajte ispis sljedećih naredbi:
+                <br/>
+                <code>netstat -nr</code><br/>
+                <code>ifconfig -a</code><br/>
+                Kopirajte ispis navedenih naredbi u donju kućicu. Ti podaci podrebni su da bi što točnije odgovorili na vaše pitanje.
+              </div>
+
+              <div id="help_linux" style="display:none">
+                Ako ste tehnički potkovani molimo kopirajte ispis sljedećih naredbi:
+                <br/>
+                <code>ip -f inet6 route show</code> <br/>
+                <code>ip -f inet6 addr</code> <br/>
+                Kopirajte ispis navedenih naredbi u donju kućicu. Ti podaci podrebni su da bi što točnije odgovorili na vaše pitanje.
+              </div>
+
+              <div id="help_windows" style="display:none">
+                Ako ste tehnički potkovani molimo otvorite "Command Prompt" ili "cmd" prozor te u njemu pokrenite sljedeće tri naredbe:
+		<br/>
+                <code>  ipconfig /all</code><br/>
+                <code>  netsh interface ipv6 show teredo</code><br/>
+                <code>  netsh interface ipv6 show route</code><br/>
+                Kopirajte ispis navedenih naredbi u donju kućicu. Ti podaci podrebni su da bi što točnije odgovorili na vaše pitanje.
+              </div>
+
+ 
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="comments" rows="10" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="submit" value="Pošalji rezultate" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+<!-- STOP mail.inc -->
+
+
+      </div>
+      
+      <div id="tab_helpdesk" style="display:none">
+        <!--START helpdesk.inc -->
+
+<div id="helpdesk" style="display:block">
+
+    <div id="helpdesk_content">
+
+      <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+      <p>Help desk information will follow once the test completes.</p>
+    </div>
+
+</div>
+
+<p></p>
+<p>
+<span style="font-size: x-small">
+More information about this page, including how to bookmark it:
+<a href="faq_helpdesk.html">faq_helpdesk.html</a>.</span>
+</p>
+
+
+
+<div id=replayurldiv  style="display:none">
+<hr/>
+<div>
+<p>
+If your Internet help desk asks you to mail the 'results url', copy and paste the following URL.
+Note that this will share your current numeric Internet Protocol address(es).
+We do not recommend posting this link on public web sites such as forums.
+</p>
+<div id=replayurl>-</div>
+<p>
+On most computers, you can right-click the above URL, and select 'Copy'.
+</p>
+</div>
+</div>
+
+
+
+
+
+<!-- STOP helpdesk.inc -->
+
+
+      </div>
+      <!-- Hide these until needed -->
+      <div id="tab_faq" style="display:none">
+      </div>
+      <div id="tab_popup" style="display:none">
+      </div>
+      
+      
+      <div id="tab_debug" style="display:none">
+        
+  <div id="debug" style="display:block">
+
+  
+
+
+
+  <div>Debug info follows.  If requested, you can  <a href="index.html.hr_HR.html#" class="tabbutton_tests"  onclick='return GIGO.debuggercomments()'>Send this debug info</a> for analysis. </div>
+
+  <div id="debug_dump"></div>
+
+  <div id="debug_eof"></div>
+
+  </div>
+
+
+      </div>
+
+      <div id="tab_sites" style="display:none">
+        
+  <div id="other_sites" style="display:block">
+
+
+  <div class="answer">
+    <b>Pošto imate radeću IPv6 vezu</b>, prikazuje se ova kartica pomoću koje možete provjeriti jesu li vam dostupne druge IPv6 stranice na Internetu. Ako su neke od stranica prikazane kao nedostupne, obavijestite svoj ISP. Ako ste vi ISP, kliknite na ikonu u Info stupcu da bi se prikazale adrese koje se koriste za provjeru.
+  </div>
+
+  <div class="answer">
+    <p><b>Napomena</b>: Moguće je sortirati po stupcima (klikom na naslov stupca); <a href="index.html.hr_HR.html#" onclick="GIGO.test_sites(2); return false;">kliknite ovdje</a> za ponavljanje provjere dostupnosti navedenih stranica s vaše lokacije.
+    </p>
+  </div>
+    
+    
+    <div id="sitestablediv">(generated by javascript)</div>
+  
+<!--   GIGO.test_contents(2); -->
+
+                 
+
+  <div class="answer">
+    <p>Vrlo je jednostavno dodati se na ovaj popis osnovnih provjera. Dovoljno je poslati adrese dvije slike (jedna dostupna samo preko IPv4, druga samo preko IPv6) na adresu Jason Fesler &lt;jfesler@gigo.com&gt;. Također pošaljite adresu vaše web stranice i naziv vaše orgranizacije.
+    </p>
+  </div>
+
+  <div class="answer">
+    Full mirrors are welcomed and appreciated, whether public or private. Please see <a href="https://github.com/falling-sky/source/wiki">the wiki</a> for details.
+  </div>
+
+  
+  </div>
+
+
+      </div>
+   
+
+    </div>
+  </div>
+</div>
+
+
+<center>
+<div id="social">
+<div id="facebook_like"></div>
+<div id="twitter_tweet"></div>
+</div>
+</center>
+
+<div id="logo">
+ <div id="logo_img"></div>
+ <div id="logo_operator"></div>
+</div>
+
+
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2016 Jason Fesler. Sva prava pridržana.  Version 1.1.548 (19ae914)<br/>
+
+ <a href="mirrors.html">Kopije stranice</a> |
+<!-- <a href="mission.html">Mission</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">Source</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">Email</a>
+ - &nbsp; - 
+<a href="attributions.html">Attributions</a>
+  
+<span class="ghost">
+  |  <a href="index.html.hr_HR.html#" onclick=" GIGO.showdebug(); return false;">Debug</a> 
+</span>
+
+
+
+  |
+
+<a href="index.html.hr_HR.html#" onclick="return help_page('locale.html','Locale')">
+<img src="images/icon_987_red.png" height="20" border="0" />
+hr_HR 
+</a>
+24.24%
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+Ova stranica je kopija weba test-ipv6.com. Ovdje iskazani pogledi mogu ali ne moraju odražavati poglede vlasnika ove kopije stranice.
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() { 
+  try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+  });   
+  </script>
+
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+

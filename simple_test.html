@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Test your IPv6.</title>
+
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="SHORTCUT ICON" href="images/favicon.ico" />
+  <link rel="stylesheet" href="index.css%3Fversion=1.1.548.css" type="text/css" />
+  <link rel="apple-touch-icon" href="images/knob_info.png"/> 
+  <meta property="og:image" content="http://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="site/config.js%3Fversion=1.1.548"></script>
+   <script type="text/javascript"  src="index.js.en_US%3Fversion=1.1.548"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+  
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="index.html" 
+>Test IPv6</a></li>
+
+
+
+<li><a href="faq.html" 
+>FAQ</a></li>
+
+
+
+<li><a href="mirrors.html" 
+>Mirrors</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+<li><a href="simple_test.html#"
+id="current">Simple Test</a></li>
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="stats.html" tabname="stats"
+  >stats</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="locale.html">
+<img src="images/icon_987_red.png" height="32" border="0" />
+</a>
+</div>
+
+</div>
+
+
+
+
+
+<div id="content">
+  <h1 id="title">Simple IPv4/IPv6 Test</h1>
+  
+  <p>This image based test is provided for those with browsers or browser plugins incompatible with the <a href="index.html">main test</a>. This page provides only a subset of features, but should be enough for a simple pass/fail.
+  </p>
+
+
+  
+<!-- Start of "simple dual stack test" by Jason Fesler <jfesler@gigo.com>, January 2011. -->
+<!-- Feel free to use the simple test on your own site, so long as you change the image urls.
+     Note JavaScript requires jQuery to be loaded.  If JavaScript is missing,
+     this page gracefully degrades (broken images instead of red box images).
+     
+     If you fail to change the image urls to your own resources, I reserve the right
+     to entertain myself and your viewers with http referer hacks.
+-->
+
+
+  <p>The following table will try and load 3 images.</p>
+
+<table summary="test images for ipv4, dual stack, and ipv6">
+
+<tr><th>Pass?</th><th>Method</th><th>More Info</th></tr>
+
+
+<tr> 
+<td><img  height=32 width=32 src="http://ipv4.test-ipv6.com/images/knob_valid_green.png" alt="?"/></td>
+<td><b>IPv4</b></td>
+<td>
+IPv4. Basic traditional Internet.
+</td></tr>
+
+<tr> 
+<td><img  height=32 width=32 src="http://ds.test-ipv6.com/images/knob_valid_green.png" alt="?"/></td>
+<td><b>IPv4 or IPv6</b></td>
+<td>
+If green, you will have no problem on World IPv6 day.<br/>
+If this fails, seek help from your IT department, helpdesk, or ISP tech support.<br/>
+If this fails, consider using the <a href="index.html">full test</a>, with IE, Firefox, Safari, or Chrome, to get more detailed information about possible failure reasons.
+</td></tr>
+
+<tr> 
+<td><img   height=32 width=32 src="http://ipv6.test-ipv6.com/images/knob_valid_green.png" alt="?"/></td>
+<td><b>IPv6</b></td>
+<td>
+<i>If red or blank, do not stress!</i> Few people already have IPv6 at this time; and it is not critical for 2011 but will be for the coming years.
+</td></tr>
+
+
+</table>
+
+
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript">
+// If JavaScript was found, jQuery should be here.
+// And if that is the case, we can change the broken
+// images, to the red "X" icon to provide visual
+// consistency.  IF this function does not actually
+// run, it is perhaps still OK.
+// Only operate on images where alt="?", to limit scope.
+function ChangeToRed () {
+    $('img').each(function() {
+        if((typeof this.naturalWidth != "undefined" &&
+            this.naturalWidth == 0 ) 
+            || this.readyState == 'uninitialized' ) {
+                if ($(this).attr("alt") === "?") {
+                    $(this).attr('src', '/images/knob_cancel.png');
+                    $(this).attr('alt','red');
+                } 
+        } else {
+            if ($(this).attr("alt") === "?") {
+                $(this).attr('alt','green');
+            }
+        }
+    });
+};
+
+jQuery(document).ready(function () {
+  $(window).bind('load', ChangeToRed);
+  setTimeout(ChangeToRed, 10000);
+});
+</script>
+
+<!-- end of simple dual stack test -->
+
+<p><i>A standalone copy of this test can be found <a href="simple_test.html">here</a>.</i></p>
+
+
+
+
+</div>
+
+    
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2016 Jason Fesler. All rights reserved.  Version 1.1.548 (19ae914)<br/>
+
+ <a href="mirrors.html">Mirrors</a> |
+<!-- <a href="mission.html">Mission</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">Source</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">Email</a>
+ - &nbsp; - 
+<a href="attributions.html">Attributions</a>
+
+
+
+  |
+
+<a href="simple_test.html#" onclick="return help_page('locale.html','Locale')">
+<img src="images/icon_987_red.png" height="20" border="0" />
+en_US 
+</a>
+
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+This is a mirror of test-ipv6.com. The views expressed here may or may not reflect the views of the mirror owner.
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() { 
+  try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+  });   
+  </script>
+
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+

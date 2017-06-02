@@ -1,0 +1,1073 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Otestuje připojení k IPv6.</title>
+
+  <meta name="description" content='Tato stránka otestuje, zdali jsou váš prohlížeč a připojení připraveny na IPv6. Ukáže vaši současnou IPv4 i IPv6 adresu.' />
+
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="SHORTCUT ICON" href="images/favicon.ico" />
+  <link rel="stylesheet" href="index.css%3Fversion=1.1.548.css" type="text/css" />
+  <link rel="apple-touch-icon" href="images/knob_info.png"/> 
+  <meta property="og:image" content="http://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="site/config.js%3Fversion=1.1.548"></script>
+   <script type="text/javascript"  src="index.js.cs_CZ%3Fversion=1.1.548"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+  
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="index.html" 
+ id="current" >Test IPv6</a></li>
+
+
+
+<li><a href="faq.html" 
+>Často kladené dotazy</a></li>
+
+
+
+<li><a href="mirrors.html" 
+>Mirrory</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="stats.html" tabname="stats"
+  >stats</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="locale.html">
+<img src="images/icon_987_red.png" height="32" border="0" />
+</a>
+</div>
+
+</div>
+
+
+
+<h1 id="title" style="margin-bottom:0;">
+  Testuje vaše IPv6 připojení.
+<span id="replay" class="replay" style="display:none">
+  (Replay)
+</span>
+</h1>
+
+<div id="is_index_page"><!-- used to identify if we're showing index page--></div>
+
+<!-- Do I ever hate the ways that browsers break things with javascript disabled. Can't even count on noscript tags. !-->
+
+<div id="noscript">
+  <p id="score0">Je vyžadován JavaScript</p>
+  
+  
+  <p>This site requires JavaScript, as well as the ability to pull in cross-site scripts, in order to perform the testing.</p>
+  <p>Pokud tato zpráva nezmizí, máte zakázaný Javascript, ať už doplňkem či rozšířením v prohlížeči, nebo přímo v jeho nastavení.</p>
+
+  <p id="score1">Používáte NoScript?</p>
+  <p>
+   Pokud používáte Firefox s tímto doplňkem, budete muset <b>dvakrát</b> provést "Temporarily allow all this page", aby všechno fungovalo. Nebo můžete během používání těchto stránek vypnout NoScript úplně.</p>
+
+  <p>You can opt instead to view the <a href="simple_test.html">simple test</a>, which will give you a quick pass/fail for IPv4, IPv4+IPv6, and IPv6. It will however offer little diagnostic information.</p>
+</div>
+
+
+<script type="text/javascript">
+ jQuery("#noscript").hide();
+ try {
+     if (MirrorConfig) {
+         GIGO.test_ipv6_gui();
+     }
+ } catch (e) {
+     // 0;
+ }
+</script>
+
+
+
+
+<div class="tabbox_outside">
+
+<div id="tabnavcontainer">
+<ul id="tabnavlist">
+
+<li id="tabbutton_helpdesk_link"><a href="index.html.cs_CZ.html#" class="tabbutton_helpdesk"  onclick='return GIGO.tabnav("helpdesk")'>Pro help desk</a></li>
+<li><a href="index.html.cs_CZ.html#" class="tabbutton_main" id="tabcurrent" onclick='return GIGO.tabnav("main")'>Souhrn</a></li>
+<li><a href="index.html.cs_CZ.html#" class="tabbutton_tests"  onclick='return GIGO.tabnav("tests")'>Spuštěné testy</a></li>
+<li style="display:none" id="tabbutton_mail_link"><a href="index.html.cs_CZ.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Sdílejte výsledky / Kontakt</a></li>
+
+<li id="faqtablink" style="display:none" class="navright"><a href="index.html.cs_CZ.html#" class="tabbutton_faq"  onclick='return GIGO.tabnav("faq")'>Často kladené dotazy</a></li>
+<li id="popuptablink" style="display:none" class="navright"><a href="index.html.cs_CZ.html#" class="tabbutton_popup"  onclick='return GIGO.tabnav("popup")' id="href_popup">Pomoc</a></li>
+
+<li style="display:none" id="debuglink"><a href="index.html.cs_CZ.html#" class="tabbutton_debug"  onclick='return GIGO.tabnav("debug")'>Ladění</a></li>
+<li style="display:none" id="siteslink"><a href="index.html.cs_CZ.html#" class="tabbutton_sites"  onclick='return GIGO.tabnav("sites")'>Další IPv6 stránky</a></li>
+
+
+
+</ul>
+</div>
+
+
+
+  <div class="tabbox_middle">
+    <div class="tabbox_inside" id="tabbox_inside">
+      <div id="tab_main" style="display:block">
+        <div id="tab_main_inside">
+        
+  
+
+  <div id="your_ipv4"></div>
+
+  <div id="your_ipv6"></div>
+
+  <div id="your_isp"></div>
+
+
+  <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+  <div id="results"></div>
+
+  <div id="results_eof"></div>
+  <div id="survey"></div>
+
+
+        </div>
+      </div>
+      <div id="tab_tests" style="display:none">
+        <div id="tab_tests_simple" style="display:block">
+          <!-- START tests.inc -->
+
+
+<div>
+  <p><b>Jak tyto testy fungují:</b> Váš prohlížeč bude požádán o připojení na sérii URL. Dle výsledné kombinace úspěšných a neúspěšných spojení lze určit jak je připraven váš prohlížeč na nasazování IPv6 u webových stránek.</p>
+  <p>Klikněte pro 
+   <a href="index.html.cs_CZ.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("tech")'>Technické informace</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary="tests run, and pass/fail">
+      <tr>
+        <td nowrap="nowrap">Test s IPv4 DNS záznamem</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_a">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Test s IPv6 DNS záznamem</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_aaaa">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Test s dual stack DNS záznamem</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ds">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Test s dual stack DNS záznamem a velkým IPv6 paketem</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_dsmtu">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Test IPv4 bez DNS</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv4">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Test IPv6 bez DNS</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv6">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Test velkých IPv6 paketů</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6mtu">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">Test zda DNS server vašeho ISP používá IPv6</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6ns">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">Zjistit poskytovatele IPv4 připojení</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn4">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Zjistit poskytovatele IPv6 připojení</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn6">
+            čeká na zpracování
+          </div>
+        </td>
+
+      </tr>
+
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">Test chyby DNS</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_buggydns1">
+            čeká na zpracování
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+<div><p>
+  Klikněte pro
+  <a href="index.html.cs_CZ.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Sdílejte výsledky / Kontakt</a></p></div>
+
+
+<!-- STOP tests.inc -->
+
+
+        </div>
+        <div id="tab_tests_tech" style="display:none">
+          <!-- START tech.inc -->
+
+
+<div>
+  <p><b>Jak tyto testy fungují:</b> Váš prohlížeč bude požádán o připojení na sérii URL. Dle výsledné kombinace úspěšných a neúspěšných spojení lze určit jak je připraven váš prohlížeč na nasazování IPv6 u webových stránek.</p>
+  <p>Klikněte pro 
+     <a href="index.html.cs_CZ.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("simple")'>Spuštěné testy</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary=
+    "technical details showing ipv6 browser test">
+      <tr>
+        <td nowrap="nowrap">
+
+          <div>
+             Test s IPv4 DNS záznamem
+          </div>
+
+          <div id="test_a">
+            čeká na zpracování
+          </div>
+
+          <div id="results_a">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_a">
+            Načte objekt, který má pouze A záznam v DNS. Očekává se použití protokolu IPv4. Uživatel připojený pouze přes IPv6 může tento objekt stáhnout v případě, že jeho poskytovatel podporuje řešení NAT64/DNS64 případně proxy.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Test s IPv6 DNS záznamem
+          </div>
+
+          <div id="test_aaaa">
+            čeká na zpracování
+          </div>
+
+          <div id="results_aaaa">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_aaaa">
+            Načte objekt, který má pouze AAAA záznam v DNS. Očekává se použití protokolu IPv6. Pro uživatele, kteří nemají IPv6 konektivitu, by měl tento test selhat. Pokud selže rychle, mělo by být vše v pořádku. Tedy zatím.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Test s dual stack DNS záznamem
+          </div>
+
+          <div id="test_ds">
+            čeká na zpracování
+          </div>
+
+          <div id="results_ds">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ds">
+            <div>Toto je nejdůležitější test. Tento test ověřuje, zdali je váš prohlížeč schopen připojení ke stránkám, které mají IPv4 i IPv6 adresu. Uživateli připojenému pouze přes IPv4 by měl test problémů projít (po IPv4).</div>
+            <p><b>Pokud tento test selže, můžete očekávat problémy, jakmile provozovatelé webových stránek začnou nabízet obsah po IPv6.</b></p>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Test s dual stack DNS záznamem a velkým IPv6 paketem
+          </div>
+
+          <div id="test_dsmtu">
+            čeká na zpracování
+          </div>
+
+          <div id="results_dsmtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_dsmtu">
+            Testuje, zdali fungují IPv6 žádosti s velkými pakety (podobně jako test s dual-stack záznamem) v kombinaci s velkými IPv6 pakety.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Test IPv4 bez DNS
+          </div>
+
+          <div id="test_ipv4">
+            čeká na zpracování
+          </div>
+
+          <div id="results_ipv4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv4">
+            Tento test se pokusí připojit na stránky pouze pomocí číselné IP adresy. To by mělo fungovat pro většinu uživatelů s výjimkou těch připojených pouze k IPv6. Pokud první test prošel a tento selhal, je pravděpodobné, že váš poskytovatel používá NAT64/DNS64. Bude nutné se připojovat pouze pomocí jmen a nikoliv číselných adres.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Test IPv6 bez DNS
+          </div>
+
+          <div id="test_ipv6">
+            čeká na zpracování
+          </div>
+
+          <div id="results_ipv6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv6">
+            V tomto testu se zkouší připojení na číselnou IPv6 adresu. Hlavním účelem je oddělení testování IPv6 konektivity od testování DNS systému pro ni. Druhým účelem je zjištění, jestli je zapnuto Teredo; některé systémy mohou využívat Teredo jen v případě, že v URL je IPv6 adresa.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Test velkých IPv6 paketů
+          </div>
+
+          <div id="test_v6mtu">
+            čeká na zpracování
+          </div>
+
+          <div id="results_v6mtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6mtu">
+            Testuje, zdali fungují IPv6 žádosti s velkými pakety. Pokud tento test selže, ale ostatní IPv6 testy projdou, znamená to, že je pravděpodobně nějaký problém s PMTUD; může to mít spojitost s IP tunely.
+            Pečlivě zkontrolujte, že zprávy ICMPv6 typ 2, (Příliš velký paket, "Packet Too Big"), nejsou filtrovány vaší bránou firewallu.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Test zda DNS server vašeho ISP používá IPv6
+          </div>
+
+          <div id="test_v6ns">
+            čeká na zpracování
+          </div>
+
+          <div id="results_v6ns">
+            -
+          </div>
+          <div>
+           (To je bonus)
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6ns">
+            Toto je test DNS resolveru vašeho poskytovatele (nejde o test vašeho počítače). Pokud tento test úspěšně projde, je váš DNS resolver (často provozován vaším poskytovatelem) schopen dotazů autoritativních DNS serverů připojených pouze po IPv6. V současné době to není nezbytné (zatím).
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Zjistit poskytovatele IPv4 připojení
+          </div>
+
+          <div id="test_asn4">
+            čeká na zpracování
+          </div>
+
+          <div id="results_asn4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn4">
+            Pokouší se určit, jakého používáte poskytovatele IPv4 připojení k Internetu. Výsledek se může lišit od obchodní značky používané na vašem lokálním trhu, případně může odrážet předchozí jméno firmy. Zobrazené jméno je to, pod kterým je známý v komunitě provozovatelů sítí.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Zjistit poskytovatele IPv6 připojení
+          </div>
+
+          <div id="test_asn6">
+            čeká na zpracování
+          </div>
+
+          <div id="results_asn6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn6">
+            Pokouší se určit, jakého používáte poskytovatele IPv6 připojení k Internetu. Pokud se jména pro IPv4 a IPv6 liší, možná používáte tunel nebo nějaký druh poskytovatele třetí strany pro IPv6.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">
+          <div>
+            Test chyby DNS
+          </div>
+
+          <div id="test_buggydns1">
+            čeká na zpracování
+          </div>
+
+          <div id="results_buggydns1">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_buggydns1">
+            Načte objekt, který má AAAA záznam. Některé routery tento objekt špatně interpertují jako A záznam a použijí jenom prvních 32 bitů. Tento test musí selhat.
+          </div>
+        </td>
+      </tr>
+      
+      
+    </table>
+
+  <div id="tech_eof"></div>
+
+<div>
+
+  <hr/>
+  <p> Pokud souhrn výsledků indikoval nějaký problém, můžete (vy nebo vaše technická podpora) použít tyto informace k diagnóze problémů. Nalevo jsou zobrazena testovaná URL a výsledky příslušných testů. Napravo je popis toho, co dané URL testuje.</p>
+  <p> Pokud výsledky testů nedávají smysl s ohledem na předcházející popisy nebo pokud potřebujete nějakou další podporu, neváhejte nás kontaktovat:</p>
+
+</div>
+
+<div><p>
+  Klikněte pro
+  <a href="index.html.cs_CZ.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Sdílejte výsledky / Kontakt</a></p></div>
+
+<!-- STOP tech.inc -->
+
+
+        </div>
+      </div>
+      <div id="tab_mail" style="display:none">
+        <!--START mail.inc -->
+
+  <div id="comments" style="display:block">
+
+    <div id="comments_wanted" style="display:none">
+      <p><b>Zaujímá nás Vaše konfigurace</b> Chceme zlepšit test-ipv6.com. Poskytnete nám víc informací o nastavení Vašeho prohlížeče a počítače? S Vaší pomocí můžeme pomoct jiným užívatelům pomoct vyřešit problémy s IPv6.</p>
+    </div>
+
+    <div id="comments_unwanted" style="display:block">
+      <p>Formulář Vám umožní vložit komentář nebo se na něco zeptat. Automaticky se uchovají výsledky Vašeho testu.
+      To zahrnuje vaši IP adresu, kterou potřebuje provozovatel serveru znát, aby mohl vaše dotazy zodpovědět.
+      Použití tohoto formuláře předpokládá souhlas.      
+      </p>
+    </div>
+    
+    <div id="comments_faq" style="display:none">
+      <p><b>Vaši</b> množinu výsledků. Prosím přečtete si ji předtým než napíšete komentář; mnoho dotazů již bylo zodpovězeno. Když máte další dotazy, použijte formulář.</p>
+    </div>
+    
+   <!-- START mail-language.inc -->
+
+    <div>
+      <p>Prosíme Vás (pokud možno) o komentáře v angličtině.</p>
+    </div>
+
+<!-- STOP mail-langauge.inc -->
+
+
+
+    <div>
+
+      <p>Pokud reportujete problém nebo žádáte o pomoc, vyplňte prosím všechny požadované informace.</p>
+
+      <p class="subtle">Děkujeme,<br/><a mailto=site.mailto href="http://test-ipv6.com/-"><span lookup=site.contact>-</span> &lt;<span lookup=site.mailto>-</span>&gt;</a></p>
+
+    </div>
+
+    <div>
+      <form id="commentform" action="http://test-ipv6.com/comment.php" method="post" enctype="multipart/form-data" name="commentform" onsubmit="return GIGO.validate_form(this)" >
+
+        <input type="hidden" name="form_tab_main" value="" />
+        <input type="hidden" name="form_config" value="" />
+        <input type="hidden" name="form_results" value="" />
+        <input type="hidden" name="a" value="" /> 
+        <input type="hidden" name="aaaa" value="" /> 
+        <input type="hidden" name="ds4" value="" /> 
+        <input type="hidden" name="ds6" value="" /> 
+        <input type="hidden" name="ipv4" value="" />
+        <input type="hidden" name="ipv6" value="" />
+        <input type="hidden" name="v6mtu" value="" />
+        <input type="hidden" name="v6ns" value="" />
+        <input type="hidden" name="ip4" value="" />
+        <input type="hidden" name="ip6" value="" /> 
+        <input type="hidden" name="dsmtu" value="" />
+        <input type="hidden" name="ip6subtype" value="" /> 
+        <input type="hidden" name="tokens" value= "" /> 
+        <input type="hidden" name="score_transition" value="" /> 
+        <input type="hidden" name="score_strict" value="" /> 
+        <input type="hidden" name="nobots" value="" />
+	<input type="hidden" name="subdomain" />
+
+
+<table summary="enable comment form">
+          <tr>
+            <td>
+              <b>Účel vaší zprávy</b>:
+            </td><td>
+           
+            <select name="purpose" onchange='jQuery("#contact_form").show();'>
+<option value="-">Účel vaší zprávy</option>
+<option value="questions">Dotaz týkající se výsledků testů</option>
+<option value="bug">Nahlášení chyby</option>
+<option value="suggestion">Doporučení</option>
+<option value="cheersjeers">Libovolný vzkaz</option>
+</select>
+</td>
+          </tr>
+
+</table>
+
+
+
+        <table summary="contact form" id="contact_form" style="display:none">
+
+
+
+
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>Vyplňte, pokud vyžadujete odpověď.</td>
+          </tr>
+
+          <tr>
+            <td><input type="text" name="contact" /></td>
+          </tr>
+
+
+          <tr>
+            <td>Jakékoliv informace, o kterých si myslíte, že jsou relevantní (například jaký používáte router, firewall proxy a podobně).</td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="notes" rows="8" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div id="help_plugins" style="display:none">
+                Testy založené na javascriptu selhaly. Může to být způsobeno instalovánými doplňky a rozšířeními, vložte prosím jejich seznam.
+              </div>
+
+              <div id="help_generic" style="display:none">
+                Pokud máte dostatečné technické znalosti, zkopírujte výstup příkazů
+                <br/>
+                <code>netstat -nr</code><br/>
+                <code>ifconfig -a</code><br/>
+                Vložte výstup příkazů. Pomůže nám to potvrdit nebo vyvrátit různé teorie týkající se Vašho dotazu
+              </div>
+
+              <div id="help_linux" style="display:none">
+                Pokud máte dostatečné technické znalosti, zkopírujte výstup příkazů
+                <br/>
+                <code>ip -f inet6 route show</code> <br/>
+                <code>ip -f inet6 addr</code> <br/>
+                Vložte výstup příkazů. Pomůže nám to potvrdit nebo vyvrátit různé teorie týkající se Vašho dotazu
+              </div>
+
+              <div id="help_windows" style="display:none">
+                Pokud máte dostatečné technické znalosti, otevřete "Příkazovou řádku" nebo program "cmd" a spusťte následující příkazy:
+		<br/>
+                <code>  ipconfig /all</code><br/>
+                <code>  netsh interface ipv6 show teredo</code><br/>
+                <code>  netsh interface ipv6 show route</code><br/>
+                Vložte výstup příkazů. Pomůže nám to potvrdit nebo vyvrátit různé teorie týkající se Vašho dotazu
+              </div>
+
+ 
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="comments" rows="10" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="submit" value="Pošli výsledky" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+<!-- STOP mail.inc -->
+
+
+      </div>
+      
+      <div id="tab_helpdesk" style="display:none">
+        <!--START helpdesk.inc -->
+
+<div id="helpdesk" style="display:block">
+
+    <div id="helpdesk_content">
+
+      <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+      <p>Help desk information will follow once the test completes.</p>
+    </div>
+
+</div>
+
+<p></p>
+<p>
+<span style="font-size: x-small">
+More information about this page, including how to bookmark it:
+<a href="faq_helpdesk.html">faq_helpdesk.html</a>.</span>
+</p>
+
+
+
+<div id=replayurldiv  style="display:none">
+<hr/>
+<div>
+<p>
+If your Internet help desk asks you to mail the 'results url', copy and paste the following URL.
+Note that this will share your current numeric Internet Protocol address(es).
+We do not recommend posting this link on public web sites such as forums.
+</p>
+<div id=replayurl>-</div>
+<p>
+On most computers, you can right-click the above URL, and select 'Copy'.
+</p>
+</div>
+</div>
+
+
+
+
+
+<!-- STOP helpdesk.inc -->
+
+
+      </div>
+      <!-- Hide these until needed -->
+      <div id="tab_faq" style="display:none">
+      </div>
+      <div id="tab_popup" style="display:none">
+      </div>
+      
+      
+      <div id="tab_debug" style="display:none">
+        
+  <div id="debug" style="display:block">
+
+  
+
+
+
+  <div>Debug info follows.  If requested, you can  <a href="index.html.cs_CZ.html#" class="tabbutton_tests"  onclick='return GIGO.debuggercomments()'>Send this debug info</a> for analysis. </div>
+
+  <div id="debug_dump"></div>
+
+  <div id="debug_eof"></div>
+
+  </div>
+
+
+      </div>
+
+      <div id="tab_sites" style="display:none">
+        
+  <div id="other_sites" style="display:block">
+
+
+  <div class="answer">
+    <b>Because you have IPv6</b>, we've added this tab to show you whether or not you can reach other IPv6 web sites on the Internet. Consider notifying your ISP, if there are sites that show up as broken. If you are the ISP, you can click the Info link to see what test URLs are being used.
+  </div>
+
+  <div class="answer">
+    <p><b>Hint</b>: Columns are sortable (click the first row); <a href="index.html.cs_CZ.html#" onclick="GIGO.test_sites(2); return false;">click here</a> to re-check reachability from where you are to those mirrors.
+    </p>
+  </div>
+    
+    
+    <div id="sitestablediv">(generated by javascript)</div>
+  
+<!--   GIGO.test_contents(2); -->
+
+                 
+
+  <div class="answer">
+    <p>It is real easy to get added to this list for basic checks. Just provide two image URLs (one IPv4-only; one IPv6-only), to Jason Fesler &lt;jfesler@gigo.com&gt;. Also send your general web site address and organization name.
+    </p>
+  </div>
+
+  <div class="answer">
+    Full mirrors are welcomed and appreciated, whether public or private. Please see <a href="https://github.com/falling-sky/source/wiki">the wiki</a> for details.
+  </div>
+
+  
+  </div>
+
+
+      </div>
+   
+
+    </div>
+  </div>
+</div>
+
+
+<center>
+<div id="social">
+<div id="facebook_like"></div>
+<div id="twitter_tweet"></div>
+</div>
+</center>
+
+<div id="logo">
+ <div id="logo_img"></div>
+ <div id="logo_operator"></div>
+</div>
+
+
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2016 Jason Fesler. Všechna práva vyhrazena.  Version 1.1.548 (19ae914)<br/>
+
+ <a href="mirrors.html">Mirrory</a> |
+<!-- <a href="mission.html">Cíl</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">Zdroj</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">E-mail</a>
+ - &nbsp; - 
+<a href="attributions.html">Attributions</a>
+  
+<span class="ghost">
+  |  <a href="index.html.cs_CZ.html#" onclick=" GIGO.showdebug(); return false;">Debug</a> 
+</span>
+
+
+
+  |
+
+<a href="index.html.cs_CZ.html#" onclick="return help_page('locale.html','Locale')">
+<img src="images/icon_987_red.png" height="20" border="0" />
+cs_CZ 
+</a>
+44.27%
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+Toto je mirror stránek test-ipv6.com. Výsledky prezentované zde můžou ale nemusí být stejné jako na původních stránkách.
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() { 
+  try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+  });   
+  </script>
+
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+MirrorConfig = 
+{
+
+  "site": {
+    "name": "test-ipv6.com",
+    "contact": "Jason Fesler",
+    "mailto": "jfesler@test-ipv6.com"
+  },
+  
+  "load": {
+    "domain": "vm1.test-ipv6.com",
+    "ipv4": "216.218.228.119",
+    "ipv6": "2001:470:1:18::119"
+  },
+  
+  "footer": {
+    "html": "/site/footer.html"
+  },
+  
+  "options": {
+    "show_stats": "/stats.html",
+    "survey": "/survey.php",
+    "comment_html": 1,
+    "comment": "/comment.php",
+    "userdata": "master.test-ipv6.com",
+    "ip": "/ip/",
+    "v6mtu": "mtu1280.vm1.test-ipv6.com"
+  },
+  
+  "facebook": {
+    "enable": 1,
+    "fb_admins": "688631212"
+  },
+  "twitter": {
+    "enable": 1,
+    "name": "testipv6com"
+  }
+}

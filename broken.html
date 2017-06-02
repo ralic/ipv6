@@ -1,0 +1,745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Test your IPv6.</title>
+
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="SHORTCUT ICON" href="images/favicon.ico" />
+  <link rel="stylesheet" href="index.css%3Fversion=1.1.548.css" type="text/css" />
+  <link rel="apple-touch-icon" href="images/knob_info.png"/> 
+  <meta property="og:image" content="http://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="site/config.js%3Fversion=1.1.548"></script>
+   <script type="text/javascript"  src="index.js.en_US%3Fversion=1.1.548"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+  
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="index.html" 
+>Test IPv6</a></li>
+
+
+
+<li><a href="faq.html" 
+>FAQ</a></li>
+
+
+
+<li><a href="mirrors.html" 
+>Mirrors</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+<li><a href="broken.html#"
+id="current">Broken!</a></li>
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="stats.html" tabname="stats"
+  >stats</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="locale.html">
+<img src="images/icon_987_red.png" height="32" border="0" />
+</a>
+</div>
+
+</div>
+
+
+
+
+<div id="content">
+  <h1 id="title">What to do if you're broken...</h1>
+
+  <p>If you are reading this page, it means that we've identified that your host will have problems on World IPv6 Day. Any web site that goes "dual stack" (meaning, both IPv4 and IPv6), will be unreachable to you.</p>
+
+  <p>To resolve this, you'll first need to identify your IPv6 address (if you have one) and your IPv6 default route (if you have one). This will help identify which sections to read.</p>
+
+  <p>
+  
+If you find your particular problem is not well represented; or you have additional suggestions; please do leave feedback using the <a href='broken.html#' onclick='return GIGO.tabnav("mail");'>form</a> (or contact <a href="mailto:jfesler@test-ipv6.com">jfesler@test-ipv6.com</a>).  
+  </p>
+
+  <div>
+ <span style="font-size: small">
+ Show instructions for:
+ [<a href="javascript:GIGO.show_os_all();">All</a>]
+ [<a href="javascript:GIGO.show_os_only_windows();">Windows</a>]
+ [<a href="javascript:GIGO.show_os_only_osx();">Mac OS X</a>]
+ [<a href="javascript:GIGO.show_os_only_ios();">iPhone/iPad</a>]
+ [<a href="javascript:GIGO.show_os_only_linux();">Linux</a>]
+ </span>
+</div>
+
+
+  <ul>
+    <a href="broken.html#staycurrent">Make sure you are current</a></li>
+
+    <a href="broken.html#findip">Find your IP address</a></li>
+
+    <a href="broken.html#tunnelbroker">If you set up a tunnel broker</a></li>
+
+    <a href="broken.html#sixfour">If you set up 6to4 (IPv6 address: starts with 2002)</a></li>
+
+    <a href="broken.html#ula">If you have an ULA (IPv6 address: starts with FC or FD)</a></li>
+    <a href="broken.html#bogon">If you have an Bad or Inappropriate IPv6 Addresss (see table)</a></li>
+    <a href="broken.html#unexpected">If you have an unexpected IPv6 address</a></li>
+    <a href="broken.html#netalyzr">Try the netalyzr</a></li>
+
+    <a href="broken.html#disable">If all else fails, disable or deprioritize IPv6</a></li>
+  </ul>
+  <hr/>
+
+
+  <a name="staycurrent" id="staycurrent">Make sure you are current</a></h2>
+  <div>
+ <span style="font-size: small">
+ Show instructions for:
+ [<a href="javascript:GIGO.show_os_all();">All</a>]
+ [<a href="javascript:GIGO.show_os_only_windows();">Windows</a>]
+ [<a href="javascript:GIGO.show_os_only_osx();">Mac OS X</a>]
+ [<a href="javascript:GIGO.show_os_only_ios();">iPhone/iPad</a>]
+ [<a href="javascript:GIGO.show_os_only_linux();">Linux</a>]
+ </span>
+</div>
+
+  
+<p>Many OS and Hardware manufacturers are making updates to help improve the transition to IPv6. Some known "gotchas" are being addressed by workarounds by these vendors.</p>
+<p>You can do your part to make sure you are running the latest:</p>
+<ul>
+  <li>OS - Make sure you have the latest.</li>
+    <ul>
+      <li class="os_osx">Mac users: Apple OS X 10.6.7 is recommended for improved IPv6 support.</li>
+      <li class="os_osx">Mac users on 10.4 or 10.5 may need to disable IPv6 if other troubleshooting steps fail.</li>
+      <li class="os_windows">Windows users: go to <a href="http://update.microsoft.com">http://update.microsoft.com</a>.</li>
+      <li class="os_ios">iPhone/iPad users: No specific version advised at this time.</li>
+    </ul>
+  <li>Routers - Make sure you have the latest firmware installed. Some vendors have updated the defaults, or put in health checks before enabling IPv6.</li>
+    <ul>
+      <li>If you are using an Apple router or Time Capsule, load the Airport Utility to check that your router is up to date.</li>
+    </ul>
+  <li>Browsers - Some browsers have made updates to detect "broken" users, and to temporarily disable IPv6.
+    <ul>
+        <li>Firefox 4.x now only tries IPv6, when an IPv6 address is configured. Firefox 3 users are encouraged to upgrade.</li>
+        <li>Chrome: If a wrench icon appears on the browser toolbar, click it. Select "Update Google Chrome" then Restart.</li>
+        <li>Opera: Make sure you use at least 11.10.</li>
+    </ul></li>
+  
+</ul>
+
+
+
+
+  <hr/>
+
+
+  <a name="findip" id="findip">Finding your IP address</a></h2>
+  <div>
+ <span style="font-size: small">
+ Show instructions for:
+ [<a href="javascript:GIGO.show_os_all();">All</a>]
+ [<a href="javascript:GIGO.show_os_only_windows();">Windows</a>]
+ [<a href="javascript:GIGO.show_os_only_osx();">Mac OS X</a>]
+ [<a href="javascript:GIGO.show_os_only_ios();">iPhone/iPad</a>]
+ [<a href="javascript:GIGO.show_os_only_linux();">Linux</a>]
+ </span>
+</div>
+
+  <p><b>Identify your IPv6 address, and your default router (if you have one).</b></p>
+
+<p>Finding your IPv6 address and default router can be a challenge if you are not familiar with your OS's network configuration. Instructions for your OS are below.</p>
+
+<p>
+When looking for your IPv6 address, skip any <code>fe80:</code> address. Everyone has them if their OS supports IPv6; this is regadless of whether or not your ISP supports IPv6 yet. Those are "link local" addresses; used just for communicating to other hosts in the same physical network as you.</p>
+
+<div class="os_osx">
+
+  <p>OS X users: To find your IP address using the GUI:</p>
+  <ul>
+  <li>Go to the "Apple" menu (top left corner)</li>
+  <li>Go to System Preferences</li>
+  <li>Go to Network</li>
+  <li>Click on your primary network (green icon) if you have more than one work.</li>
+  <li>Go to "Advanced"</li>
+  <li>Look at the TCP/IP tab, uder "Configure IPv6".</li>
+  <li>Make a note of whether or not there is a router.</li>
+  <li>Make a note of the IPv6 address (if any).</li>
+  </ul>
+
+  <p>OS X users: To find your IP address using the command line:</p>
+  <ul>
+  <li>To open your terminal: Go to your Applications folder; go to Utilities; and double click Terminal.</li>
+  <li>To see your IP addresses: <code>ifconfig -f inet6</code>.</li>
+  <li>Ignore the <code>fe80:</code> addresses; look for any other address on your <code>en0</code> or <code>en1</code>.</li>
+  <li>To see if you have a default route: <code>netstat -nr -f inet6</code>.</li>
+  <li>Look for a line that says "default"; probably pointing to a gateway starting with <code>fe80:</code></li>
+  </ul>
+</div>
+
+<div class="os_ios">
+  <p>iPhone and iPad users: No information is shown via Apple's preferences/setup. The "IT Tools" and the "ip6config" apps do show IPv6 address data; both cost.</p>
+</div>
+
+
+<div class="os_linux">
+
+  <p>Linux users: To find your IPv6 address, open a terminal and..</p>
+  <ul>
+  <li><code>ip -6 address show</code></li>
+  </ul>
+
+  <p>Linux users: To find your IPv6 route, use:</p>
+  <ul>
+  <li><code>ip -6 route show default</code>
+  </ul>
+
+</div>
+
+<div class="os_other">
+
+  <p>Generic unix instructions for determining your IPv6 address and default route:</p>
+  <ul>
+  <li>Run<code>ifconfig -a</code>and look for <code>inet6</code> to see your possible IPv6 addresses.</li>
+  <li>Run<code>netstat -nr</code>and look for <code>inet6</code> or <code>Internet6</code> or similar to find the IPv6 portion; then look for <code>default</code> or <code>::</code> or <code>::/0</code>.</li>
+  </ul>
+
+</div>
+
+<div class="os_windows">
+
+  <p>Windows users: To find your IP address using cmd.exe:</p>
+  <ul>
+  <li>Go to your "start" menu</li>
+  <li>If you have a "Run" menu option, select it. Otherwise go to the "Search programs and files" box.</li>
+  <li>Type <code>cmd.exe</code></li>
+  <li>In the cmd window, type <code>ipconfig</code> .</li>
+  </ul>
+
+  <p>Windows 7 GUI users:</p>
+  <ul>
+  <li>Go to the start menu</li>
+  <li>Go to the control panel</li>
+  <li>Go to "Network and Internet"</li>
+  <li>Go to "View network status and tasks"</li>
+  <li>Go to "Change adapter settings".</li>
+  <li>Go to your main Internet connection, double click</li>
+  <li>Go to "Details"</li>
+  <li>Look for "IPv6 Address" and "IPv6 Default Gateway"</li>
+  </ul>
+
+  <p><em>Other Windows based OS's: Send jfesler@test-ipv6.com detailed instructions; and I'll add them to the site.</em></p>
+
+</div>
+
+
+
+  <hr/>
+  
+
+  <a name="tunnelbroker" id="tunnelbroker">If you set up a tunnel broker</a></h2>
+  <p>
+  <b>If you set up a tunnelbroker tunnel</b>: The most common causes for tunnelbroker users to fail are:
+</p>
+
+<ul>
+  <li>Your IPv4 address may have changed; you need to tell the tunnelbroker server this happened.</li>
+
+  <li>If you are using your router to do the 6in4 (sometimes called 6to4 with explicit provider):
+
+    <ul>
+      <li>Make sure tunnelbroker knows your current IPv4 address. Our site tells you your public IPv4 address.</li>
+
+      <li>Make sure your router can ping the other side of the tunnel. Don't waste your time fixing computers until the router works!</li>
+    </ul>
+  </li>
+
+  <li>If you are using your Linux, BSD, Mac, or Windows box to "talk 6to4" specifically:
+
+    <ul>
+      <li>Make sure your router is passing "protocol 41" to you.</li>
+
+      <li>Make sure any software firewall you are operating is passing "protocol 41" to you.</li>
+
+      <li>If everything worked before your reboot but fails now, check your firewall settings.</li>
+
+      <li>Make sure the box "doing 6to4" can ping the other side of the tunnelbroker gateway before working on any other hosts.</li>
+    </ul>
+  </li>
+</ul>
+
+  <hr/>
+
+  <a name="sixfour" id="sixfour">If you set up 6to4</a></h2>
+
+  <h3>(IPv6 address: starts with 2002)</h3>
+  <p><b>If you use 6to4</b> (without a tunnel broker; ie, using anonymous 6to4):</p>
+
+<p>
+
+The use of "automatic" 6to4, or the use of 6to4 without explicit configuration of the gateways, is not recommended. For more information see <a href='broken.html#' onclick='return help_page("faq_6to4.html","6to4")'>6to4</a>.
+
+</p>
+
+<p>If you want to continue trying to debug anonymous 6to4:</p>
+
+<ul>
+  <li>If you are using your router to do the 6to4:</li>
+
+    <ul>
+      <li>Make sure your router has a public IPv4 address. Without this, 6to4 fails.</li>
+
+      <li>If your router permits you to log in, use "ping" or "ping6" and see if you can ping "ipv6.test-ipv6.com". Don't waste your time fixing computers until the router works!</li>
+    </ul>
+
+  <li>If you are using your Linux, BSD, Mac, or Windows box to "talk 6to4" specifically:</li>
+
+    <ul>
+      <li>Make sure your router is passing "protocol 41" to you.</li>
+
+      <li>Most home systems have private IPv4 addresses; this won't work with 6to4 (unless..)</li>
+
+      <li>Make sure your 6to4 interface knows your public IPv4 address.</li>
+
+      <li>Make sure that your router permits protocol 41 from any IP address - not just 192.88.99.1. This will allow web sites to operate their half of 6to4, even if they can not spoof the 192.88.99.1 anycast address.</li>
+
+      <li>Linux users using iptables connection tracking: take heed of the previous note!</li>
+    </ul>
+
+  <li>Consider changing how you connect.</li>
+
+  <li style="list-style: none; display: inline">
+    <ul>
+      <li>Ask your ISP if they offer any IPv6 connectivity (including possibly 6in4 tunnels, or tunnelbroker type tunnels).</li>
+      <li>See <a href="broken.html#" onclick='return help_page("faq_6to4.html","6to4")'>6to4</a> for more information on why you would want to switch; and some options.</li>
+    </ul>
+  </li>
+</ul>
+  	
+  <hr/>
+
+  <a name="ula" id="ula">If you have an ULA</a></h2>
+
+  <h3>(IPv6 address: starts with FC or FD)</h3>
+  <p><b>ULA or Unique-Local-Unicast</b>:
+If you have an IP address starting with <code>FC</code> or <code>FD</code>, you have what is effectively a private IPv6 address. It might be usable for talking to other devices within your home, or within your company. It also allows you to have a steady IPv6 address inside, even if your public IPv6 address changes regularly.</p>
+
+<p>The main problem with ULA is that certain home routers are now offering ULA, *and* giving you a default route. This route is offered regardless of whether or not your router actually has IPv6 connectivity. From your browser's point of view, it doesn't know that your default route goes nowhere; there is no feedback mechanism. Since IPv6 is (roughly speaking) preferred over IPv4, your browser will try using this broken route. It may take minutes before giving up.</p>
+
+<p>Our advice: Enable ULA only if your router has full time IPv6 connectivity. Disable it, otherwise. If you do disable it on your router, you will likely need to reboot your router first, then reboot your host, before the symptoms go away.</p>
+
+
+  <hr/>
+  
+  <a name="bogon" id="bogon">Bad or Inappropriate IPv6 Addresss</a></h2>
+
+  <h3>(IPv6 address: see table below)</h3>
+  <p><b>Bad or Inappropriate IPv6 Addresses (Bogons)</b>:
+If you IPv6 address starts with any of these, your router needs to be upgraded.</p>
+
+<table summary=ipv6_bogons border=1>
+    <tr>
+        <td valign=top><p><b>fc</b>xx: or <b>fd</b>xx:</p></td>
+        <td valign=top>
+            <p><a href="broken.html#" onclick="return help_page('faq_avm.html','AVM')">AVM FritzBox</a> - disable ULA.</p>
+            <p>Other routers: Try updating the firmware. If that fails, look for and disable "ULA" or "Unique Local Addressing".</p>
+            <p>If that fails, disable IPv6 entirely on the router.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign=top><p><b>2002:0A</b>xx: or <b>2002:A</b>xx:<br/>
+            <b>2002:AC1</b>x:<br/>
+            <b>2002:C0A8:</b></br>
+            <b>2002:644</b>x:</br>
+            <b>2002:645</b>x:</br>
+            <b>2002:646</b>x:</br>
+            <b>2002:647</b>x:</br>
+            </p>
+            
+            </td>
+        <td valign=top><p>This is a router using 6to4, but using a private IPv4 address. This will never work.</p>
+            <p>Apple routers: Update to the latest firmware; that has been corrected.</p>
+            <p>Other routers: Try updating the firmware. If that fails, look for and disable "6to4" or any form of automatic IPv6 tunnel.</p>
+            <p>If that fails, disable IPv6 entirely on the router.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign=top>
+            <p><b>2001:db8:</b></p>
+        </td>
+        <td valign=top>
+            <p>This router is using the official "Documentation" prefix - which is not routable on the IPv6 Internet.</p>
+            <p>Cisco E2000, E3000, E4200: Update to the latest firmware.</p>
+            <p>Other routers: Try updating the firmware.</p>
+            <p>If that fails, disable IPv6 entirely on the router.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign=top><p><b>2005:123:456:789:</b></p></td>
+        <td valign=top>
+            <p>WRVS4400N routers: Disable IPv6.</p>
+            <p>Other routers: Try updating the firmware.</p>
+            <p>If that fails, disable IPv6 entirely on the router.</p>
+        </td>
+    </tr>
+</table>
+
+            
+    
+
+  <hr/>  
+
+  <a name="unexpected" id="unexpected">If you have an unexpected IPv6 address</a></h2>
+
+  <h3>(IPv6 address: not starting with fe80)</h3>
+  <p><b>Unexpected IPv6 address?</b></p>
+
+<p>
+Modern operating systems all have IPv6 enabled. This feature is dormant until someone explicitly configures IPv6, <em><b>or</b></em> a device on the local network offers it. Autoconfigured IPv6 hosts learn their IPv6 address and their gateway through the use of IPv6 router announcements (RAs). The network you are on may intentionally offer IPv6; you'll automatically use it when your computer sees it.
+</p>
+
+<p>
+<b>Where this goes wrong:</b> Some people plug their router into the network (wired or wireless) and inadvertantly offer IPv6 services to everyone. Classic examples of this are where people add an early version of an Apple router (with 6to4 automatically enabled); another example is someone who has Windows Internet Connection Sharing enabled. In both cases, there is a chance they offer their services - and become your IPv6 router of choice, without any notification to you.
+</p>
+
+<p>If these IPv6 routers don't work, you will fail to connect to any web site that offers services on both IPv4 and IPv6. Even if they do work, if the router in question is unplugged (the owner packs up, leaves the hotel/conference) your host never gets the notice; and it can be hours before it gives up.
+  </p>
+
+<p><b>This is similiar to someone accidentially (or intentionally) running a rogue DHCP server.</b></p> 
+
+<p>
+<b>If you are are not the network admin</b> - and have no access to fix the problem - consider disabling IPv6, at least for the location you are in. Another option might be to try turning off, and turning back on, your network interface (clearing the IP address), in case the source of the problem has left the network.
+</p>
+
+
+<p>
+<b>If you are the network administrator</b>: You can use the default route information to identify the ethernet address; and then search for the owner of that ethernet address. Some network vendors have features that will suppress the advertisements of unauthorized RAs (router announcements); consider enabling those feaatures. More reactive measures involve finding (by ethernet address) the owner of the device; or possibly spoofing RA's from their device to indicate the device is going away.</p>
+
+
+
+  <hr/>
+
+  <a name="netalyzr" id="netalyzr">Try the netalyzr</a></h2>
+     <p> 
+
+Consider trying the "netalyzr". This is another site that runs a java applet (which can do more than my site can, in just javascript). I would find feedback about how you useful this site was for you.
+From the netalyzr staff:
+</p>
+<blockquote>
+     <p >
+       <A target="_blank"
+href="http://netalyzr.icsi.berkeley.edu/m=testv6">Netalyzr</A> is a free
+network debugging and diagnostic service written by researchers at the
+International Computer Science Institute in Berkeley.  This tool runs from
+within your Java-enabled web browser.  It automatically detects many
+conditions which might cause problems with IPv6 connectivity, including
+creating a list of all IP addresses, discovering IPv6 addresses that don't
+work, detecting IPv6 rogue gateways, and a host of other network problems.
+     </p>
+</blockquote>
+
+  <hr/>
+
+  <a name="disable" id="disable">If all else fails</a></h2>
+  <div>
+ <span style="font-size: small">
+ Show instructions for:
+ [<a href="javascript:GIGO.show_os_all();">All</a>]
+ [<a href="javascript:GIGO.show_os_only_windows();">Windows</a>]
+ [<a href="javascript:GIGO.show_os_only_osx();">Mac OS X</a>]
+ [<a href="javascript:GIGO.show_os_only_ios();">iPhone/iPad</a>]
+ [<a href="javascript:GIGO.show_os_only_linux();">Linux</a>]
+ </span>
+</div>
+
+
+  <h3>(Instructions for disabling or deprioritizing IPv6)</h3>
+  <p><b>Disabling or Deprioritizing your IPv6 address</b></p>
+
+
+<div class="os_windows">
+
+  <p>
+<b>To disable IPv6 entirely, until your ISP offers IPv6 to you:</b> see <b>Microsoft's "fixit" site</b> that gives clear instructions. We advocate considering "Use IPv4 instead of IPv6 in prefix policies", instead of completely disabling IPv6. Specific Windows features depend on IPv6 being enabled.
+</p>
+
+  <ul>
+    <li><a href="http://support.microsoft.com/kb/929852">Vista, Win7, Win2008 "fixit"</a></li>
+  </ul>
+  
+
+
+  <p>To completely disable IPv6 (Windows 7, Vista; XP should be similiar):</p>
+
+  <ul>
+    <li>Go to the start menu</li>
+
+    <li>Go to the control panel</li>
+
+    <li>Go to "Network and Internet"</li>
+
+    <li>Go to "View network status and tasks"</li>
+
+    <li>Go to "Change adapter settings".</li>
+
+    <li>Go to your main Internet connection, double click</li>
+
+    <li>Go to "Properties"</li>
+
+    <li>Uncheck "Internet Protocol Version 6"</li>
+
+    <li>Hit "ok"</li>
+
+    <li>Shutdown/reboot.</li>
+  </ul>
+  
+  <p>To disable IPv6 in Windows XP:</p>
+  
+  <ul>
+    <li>Taken from: <a href="http://support.microsoft.com/kb/2478747">http://support.microsoft.com/kb/2478747</a></li>
+    <li>Make sure you are logged in as an Administrator.</li>
+    <li>Click Start, click All Programs, click Accessories, and then click Command Prompt.</li>
+    <li>At the command prompt, type: netsh int ipv6 uninstall and press the Enter key on your keyboard.</li>
+    <li>Close the Command Prompt window and restart the computer.</li>
+  </ul>
+  
+  <p><em>Other Windows based OS's: Send jfesler@test-ipv6.com detailed instructions; and I'll add them to the site.</em></p>
+</div>
+
+
+<div class="os_osx">
+  <p><b>OS X users</b></p>
+  
+  <p>Before disabling IPv6, please be sure you are running the latest OS version. In particular, OS X 10.6.7 has several workarounds for being "Broken". This may solve your problems without resorting to completely disabling IPv6.</p>
+
+
+
+    <ul>
+    <li>How to disable IPv6</li>
+
+    <li style="list-style: none; display: inline">
+      <ul>
+        <li>Go to the "Apple" menu (top left corner)</li>
+
+        <li>Go to System Preferences</li>
+
+        <li>Go to Network</li>
+
+        <li>Click on your primary network (green icon) if you have more than one work.</li>
+
+        <li>Go to "Advanced"</li>
+
+        <li>Disable IPv6</li>
+
+        <li>Apply changes</li>
+      </ul>
+    </ul>
+    
+</div>
+
+<div class="os_ios">
+  <p><b>iPhone and iPad users</b></p>
+  <p>IPv6 is not configurable on the iPhone or iPad. Your only option is to switch to another network.</p>
+</div>
+
+
+<div class="os_linux">
+  <p><b>Linux users:</b></p>
+
+    <ul>
+    <li>How to disable IPv6</li>
+
+    <li style="list-style: none; display: inline">
+      <ul>
+        <li>This is very distribution-specific. Do a web search using your favorite search engine.</li>
+
+        <li>Example web search: <code>disable ipv6 on centos</code></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="os_other">
+  <p><b>Generic unix instructions, to temporarily remove your IPv6 address.</b></p>
+
+  <ul>
+    <li><code>ifconfig eth0 inet6 IP_ADDRESS remove</code></li>
+
+    <li>Be aware that if the router re-advertises it, you will relearn the default route.</li>
+
+    <li>You can do a web search for your particular OS distribution. Example search would be <code>disable ipv6 on freebsd</code>.</li>
+  </ul>
+</div>
+
+  <hr/>
+
+  <a name="seealso" id="seealso">See Also</a></h2>
+
+  <h3>Other resources that may help</h3>
+
+  <ul>
+    <li><a href="https://www.getipv6.info/display/IPv6/Customer+problems+that+could+occur">
+                 https://www.getipv6.info/display/IPv6/Customer+problems+that+could+occur
+    </a></li>
+  </ul>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() 
+     {
+      GIGO.show_os_start();
+     });
+    </script>
+
+</div>
+
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2016 Jason Fesler. All rights reserved.  Version 1.1.548 (19ae914)<br/>
+
+ <a href="mirrors.html">Mirrors</a> |
+<!-- <a href="mission.html">Mission</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">Source</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">Email</a>
+ - &nbsp; - 
+<a href="attributions.html">Attributions</a>
+
+
+
+  |
+
+<a href="broken.html#" onclick="return help_page('locale.html','Locale')">
+<img src="images/icon_987_red.png" height="20" border="0" />
+en_US 
+</a>
+
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+This is a mirror of test-ipv6.com. The views expressed here may or may not reflect the views of the mirror owner.
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() { 
+  try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+  });   
+  </script>
+
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+

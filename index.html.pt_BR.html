@@ -1,0 +1,1073 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Teste seu IPv6.</title>
+
+  <meta name="description" content='Esse teste verificará a adequação de seu navegador e de sua conexão ao IPv6 e mostrará seus endereços IPv4 e IPv6.' />
+
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="SHORTCUT ICON" href="images/favicon.ico" />
+  <link rel="stylesheet" href="index.css%3Fversion=1.1.548.css" type="text/css" />
+  <link rel="apple-touch-icon" href="images/knob_info.png"/> 
+  <meta property="og:image" content="http://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="site/config.js%3Fversion=1.1.548"></script>
+   <script type="text/javascript"  src="index.js.pt_BR%3Fversion=1.1.548"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+  
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="index.html" 
+ id="current" >Testar IPv6</a></li>
+
+
+
+<li><a href="faq.html" 
+>Perguntas Freqüentes</a></li>
+
+
+
+<li><a href="mirrors.html" 
+>Espelhos</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="stats.html" tabname="stats"
+  >Estatísticas</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="locale.html">
+<img src="images/icon_987_red.png" height="32" border="0" />
+</a>
+</div>
+
+</div>
+
+
+
+<h1 id="title" style="margin-bottom:0;">
+  Testar sua conectividade IPv6.
+<span id="replay" class="replay" style="display:none">
+  (Testar novamente)
+</span>
+</h1>
+
+<div id="is_index_page"><!-- used to identify if we're showing index page--></div>
+
+<!-- Do I ever hate the ways that browsers break things with javascript disabled. Can't even count on noscript tags. !-->
+
+<div id="noscript">
+  <p id="score0">JavaScript necessário</p>
+  
+  
+  <p>Este site requer JavaScript, bem como a capacidade de utilizar scripts entre sites, a fim de realizar os testes.</p>
+  <p>Se esta mensagem não desaparecer, significa que o JavaScript foi desativado por um plugin, extensão ou configuração explícita de seu navegador.</p>
+
+  <p id="score1">Você usa o NoScript?</p>
+  <p>
+   Se você usa este complemento do Firefox, você vai precisar marcar a opção "Temporariamente permitir tudo nesta página". Você vai precisar fazer isso <b>duas vezes</b> para que tudo funcione. Ao invés disto, você pode desabilitar o NoScript completamente até que você termine de utilizar este site.</p>
+
+  <p>Você pode optar por visualizar o <a href="simple_test.html">teste simples</a>, que vai te mostrar rapidamente um teste de sucesso/falha para IPv4, IPv4+IPv6 e IPv6. No entanto, este teste oferece pouca informação para diagnóstico de conexão.</p>
+</div>
+
+
+<script type="text/javascript">
+ jQuery("#noscript").hide();
+ try {
+     if (MirrorConfig) {
+         GIGO.test_ipv6_gui();
+     }
+ } catch (e) {
+     // 0;
+ }
+</script>
+
+
+
+
+<div class="tabbox_outside">
+
+<div id="tabnavcontainer">
+<ul id="tabnavlist">
+
+<li id="tabbutton_helpdesk_link"><a href="index.html.pt_BR.html#" class="tabbutton_helpdesk"  onclick='return GIGO.tabnav("helpdesk")'>Para o suporte</a></li>
+<li><a href="index.html.pt_BR.html#" class="tabbutton_main" id="tabcurrent" onclick='return GIGO.tabnav("main")'>Resumo</a></li>
+<li><a href="index.html.pt_BR.html#" class="tabbutton_tests"  onclick='return GIGO.tabnav("tests")'>Testes Executados</a></li>
+<li style="display:none" id="tabbutton_mail_link"><a href="index.html.pt_BR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Compartilhar Resultados / Contato</a></li>
+
+<li id="faqtablink" style="display:none" class="navright"><a href="index.html.pt_BR.html#" class="tabbutton_faq"  onclick='return GIGO.tabnav("faq")'>FAQ para Você</a></li>
+<li id="popuptablink" style="display:none" class="navright"><a href="index.html.pt_BR.html#" class="tabbutton_popup"  onclick='return GIGO.tabnav("popup")' id="href_popup">Popup de Ajuda</a></li>
+
+<li style="display:none" id="debuglink"><a href="index.html.pt_BR.html#" class="tabbutton_debug"  onclick='return GIGO.tabnav("debug")'>Depurar</a></li>
+<li style="display:none" id="siteslink"><a href="index.html.pt_BR.html#" class="tabbutton_sites"  onclick='return GIGO.tabnav("sites")'>Outros Sites IPv6</a></li>
+
+
+
+</ul>
+</div>
+
+
+
+  <div class="tabbox_middle">
+    <div class="tabbox_inside" id="tabbox_inside">
+      <div id="tab_main" style="display:block">
+        <div id="tab_main_inside">
+        
+  
+
+  <div id="your_ipv4"></div>
+
+  <div id="your_ipv6"></div>
+
+  <div id="your_isp"></div>
+
+
+  <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+  <div id="results"></div>
+
+  <div id="results_eof"></div>
+  <div id="survey"></div>
+
+
+        </div>
+      </div>
+      <div id="tab_tests" style="display:none">
+        <div id="tab_tests_simple" style="display:block">
+          <!-- START tests.inc -->
+
+
+<div>
+  <p><b>Como esse teste funciona:</b> Seu navegador será instruído a acessar uma série de URLs. A combinação de sucessos e falhas dirá o quão preparado você está para o momento em que as entidades começarem a publicar seus sites em IPv6.</p>
+  <p>Clique para ver 
+   <a href="index.html.pt_BR.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("tech")'>Informação Técnica</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary="tests run, and pass/fail">
+      <tr>
+        <td nowrap="nowrap">Testa com um registro DNS IPv4</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_a">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Testa com um registro DNS IPv6</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_aaaa">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Testa com um registro DNS duplo</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ds">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Testa DNS duplo e pacote grande</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_dsmtu">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Testa IPv4 sem DNS</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv4">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Testa IPv6 sem DNS</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ipv6">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Testa pacote IPv6 grande</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6mtu">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">Testa se o servidor DNS de seu provedor usa IPv6</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6ns">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">Encontrar provedor de serviços de IPv4</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn4">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">Encontrar provedor de serviços de IPv6</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn6">
+            pendente
+          </div>
+        </td>
+
+      </tr>
+
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">Testa DNS problemático</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_buggydns1">
+            pendente
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+<div><p>
+  Clique para ver
+  <a href="index.html.pt_BR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Compartilhar Resultados / Contato</a></p></div>
+
+
+<!-- STOP tests.inc -->
+
+
+        </div>
+        <div id="tab_tests_tech" style="display:none">
+          <!-- START tech.inc -->
+
+
+<div>
+  <p><b>Como esse teste funciona:</b> Seu navegador será instruído a acessar uma série de URLs. A combinação de sucessos e falhas dirá o quão preparado você está para o momento em que as entidades começarem a publicar seus sites em IPv6.</p>
+  <p>Clique para ver 
+     <a href="index.html.pt_BR.html#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("simple")'>Testes Executados</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary=
+    "technical details showing ipv6 browser test">
+      <tr>
+        <td nowrap="nowrap">
+
+          <div>
+             Testa com um registro DNS IPv4
+          </div>
+
+          <div id="test_a">
+            pendente
+          </div>
+
+          <div id="results_a">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_a">
+            Busca um objeto que tem apenas um registro A no DNS. É esperado o uso de IPv4. Usuários que utilizam apenas IPv6 ainda podem acessar isso se seus provedores empregarem alguma solução envolvendo NAT64/DNS64 ou um proxy.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Testa com um registro DNS IPv6
+          </div>
+
+          <div id="test_aaaa">
+            pendente
+          </div>
+
+          <div id="results_aaaa">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_aaaa">
+            Busca um objeto que tem apenas um registro AAAA no DNS. É esperado o uso de IPv6. Usuários que ainda não usam a Internet IPv6 provavelmente verão isso falhar. Enquanto falhar rapidamente, está tudo bem - para o momento.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Testa com um registro DNS duplo
+          </div>
+
+          <div id="test_ds">
+            pendente
+          </div>
+
+          <div id="results_ds">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ds">
+            <div>Esse é o teste mais importante. Ele verifica se seu navegador consegue acessar sites que possuem tanto um registro IPv4 quanto um IPv6. Computadores baseados exclusivamente em IPv4 devem fazer isso sem problemas (usando IPv4).</div>
+            <p><b>Se esse teste falhar ou não for completado em tempo hábil, espere problemas quando entidades começarem a disponibilizar seus sites em IPv6.</b></p>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Testa DNS duplo e pacote grande
+          </div>
+
+          <div id="test_dsmtu">
+            pendente
+          </div>
+
+          <div id="results_dsmtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_dsmtu">
+            Verifica o funcionamento de conexões a um servidor de pilha dupla (como o teste ds) e se você pode enviar/receber pacotes grandes nessa conexão. Se esse teste não for completado em tempo hábil, isso indica que você terá problemas no dia mundial do IPv6.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Testa IPv4 sem DNS
+          </div>
+
+          <div id="test_ipv4">
+            pendente
+          </div>
+
+          <div id="results_ipv4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv4">
+            Isso tentará uma conexão usando um endereço IPv4, o que deve funcionar para a maioria das pessoas, a menos que estejam usando exclusivamente IPv6. Se o primeiro teste funcionou mas este não, isso pode significar que seu provedor está usando NAT64/DNS64. Você apenas precisará tentar conectar usando nomes ao invés de endereços IP.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Testa IPv6 sem DNS
+          </div>
+
+          <div id="test_ipv6">
+            pendente
+          </div>
+
+          <div id="results_ipv6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ipv6">
+            Isso tentará fazer uma conexão usando um endereço IPv6 hexadecimal. A ideia é fazer a separação de sua conectividade IPv6 de sua capacidade de utilizar DNS para isso e depois verificar se você está utilizando Teredo. Alguns sistemas só podem usar Teredo quando há um endereço IPv6 na URL.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            Testa pacote IPv6 grande
+          </div>
+
+          <div id="test_v6mtu">
+            pendente
+          </div>
+
+          <div id="results_v6mtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6mtu">
+            Verifica o funcionamento de requisições IPv6 usando pacotes grandes. Se esse teste não for concluído em tempo hábil mas outros testes IPv6 funcionarem, é provável que haja problemas com PMTUD, possivelmente envolvendo túneis IP.
+            Verifique novamente se as mensagens ICMPv6 Tipo 2 (Pacote grande demais) não estão sendo filtradas pelo seu firewall.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Testa se o servidor DNS de seu provedor usa IPv6
+          </div>
+
+          <div id="test_v6ns">
+            pendente
+          </div>
+
+          <div id="results_v6ns">
+            -
+          </div>
+          <div>
+           (bônus)
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6ns">
+            Esse é um teste para o seu provedor e não para seu computador. Se esse teste funcionar, seu servidor DNS (frequentemente mantido em seu provedor) é capaz de acessar servidores DNS autoritativos baseados exclusivamente em IPv6. No momento não é essencial para você acessar sites via IPv6.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Encontrar provedor de serviços de IPv4
+          </div>
+
+          <div id="test_asn4">
+            pendente
+          </div>
+
+          <div id="results_asn4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn4">
+            Tenta identificar qual Provedor de Serviços de Internet (ISP) você utiliza com o IPv4. Este nome pode ser diferente do nome comercial que você está acostumado ou pode representar um nome que esta empresa já utilizou no passado. O nome mostrado é como seu provedor é conhecido na comunidade de operadores de rede.
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             Encontrar provedor de serviços de IPv6
+          </div>
+
+          <div id="test_asn6">
+            pendente
+          </div>
+
+          <div id="results_asn6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn6">
+            Tenta identificar qual Provedor de Serviços de Internet (ISP) você utiliza com o IPv6. Se o nome IPv4 e IPv6 são diferentes, isto pode sugerir que você está utilizando um túnel ou alguma forma de provedor terceirizado para IPv6.
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">
+          <div>
+            Testa DNS problemático
+          </div>
+
+          <div id="test_buggydns1">
+            pendente
+          </div>
+
+          <div id="results_buggydns1">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_buggydns1">
+            Consultas por um registro AAAA malformado. Alguns roteadores os tratam inadequadamente como registros A e mantém apenas os primeiros 32 bits. Queremos que esse teste falhe.
+          </div>
+        </td>
+      </tr>
+      
+      
+    </table>
+
+  <div id="tech_eof"></div>
+
+<div>
+
+  <hr/>
+  <p> Se o resumo dos resultados indicou problemas, você (ou seu suporte técnico) deve ser capaz de utilizar as informações acima para fazer os diagnósticos. Cada URL de teste e seus resultados aparecem no lado esquerdo. À direita você verá uma descrição do que aquela URL testa.</p>
+  <p> Depois que cada teste é executado. Se o resumo não faz sentido considerando os sintomas registrados acima ou se você precisa de assistência, por favor, sinta-se à vontade para nos contactar.</p>
+
+</div>
+
+<div><p>
+  Clique para ver
+  <a href="index.html.pt_BR.html#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>Compartilhar Resultados / Contato</a></p></div>
+
+<!-- STOP tech.inc -->
+
+
+        </div>
+      </div>
+      <div id="tab_mail" style="display:none">
+        <!--START mail.inc -->
+
+  <div id="comments" style="display:block">
+
+    <div id="comments_wanted" style="display:none">
+      <p><b>Temos particular interesse em sua configuração.</b> Estamos sempre nos esforçando para melhorar o test-ipv6.com. Você estaria disposto a contribuir nos fornecendo informações sobre seu navegador e configuração de seu computador? Com sua ajuda nós podemos ajudar outras pessoas a resolver problemas em seus sistemas.</p>
+    </div>
+
+    <div id="comments_unwanted" style="display:block">
+      <p>Este formulário permitirá que você deixe comentários, externe preocupações ou faça perguntas. Os resultados de seu teste serão incluídos automaticamente.
+      Isto inclui seu endereço IP, que é compartilhado com o administrador do site, de maneira a responder suas perguntas.
+      A utilização deste formulário implica consentimento.      
+      </p>
+    </div>
+    
+    <div id="comments_faq" style="display:none">
+      <p><b>seu</b> conjunto de resultados. Por favor, leia-a antes de deixar comentários pois muitas perguntas já foram respondidas lá. Se após isso você ainda tiver perguntas, comentários ou preocupações, sinta-se à vontade para usar este formulário.</p>
+    </div>
+    
+   <!-- START mail-language.inc -->
+
+    <div>
+      <p>Se possível, por favor, faça seus comentários em Inglês.</p>
+    </div>
+
+<!-- STOP mail-langauge.inc -->
+
+
+
+    <div>
+
+      <p>Se você estiver comunicando um problema com o teste ou solicitando ajuda com seus resultados, por favor, preencha o formulário completamente e da melhor forma possível. Se você estiver fazendo um comentário geral, use o bom senso para decidir o que escrever.</p>
+
+      <p class="subtle">Obrigado,<br/><a mailto=site.mailto href="http://test-ipv6.com/-"><span lookup=site.contact>-</span> &lt;<span lookup=site.mailto>-</span>&gt;</a></p>
+
+    </div>
+
+    <div>
+      <form id="commentform" action="http://test-ipv6.com/comment.php" method="post" enctype="multipart/form-data" name="commentform" onsubmit="return GIGO.validate_form(this)" >
+
+        <input type="hidden" name="form_tab_main" value="" />
+        <input type="hidden" name="form_config" value="" />
+        <input type="hidden" name="form_results" value="" />
+        <input type="hidden" name="a" value="" /> 
+        <input type="hidden" name="aaaa" value="" /> 
+        <input type="hidden" name="ds4" value="" /> 
+        <input type="hidden" name="ds6" value="" /> 
+        <input type="hidden" name="ipv4" value="" />
+        <input type="hidden" name="ipv6" value="" />
+        <input type="hidden" name="v6mtu" value="" />
+        <input type="hidden" name="v6ns" value="" />
+        <input type="hidden" name="ip4" value="" />
+        <input type="hidden" name="ip6" value="" /> 
+        <input type="hidden" name="dsmtu" value="" />
+        <input type="hidden" name="ip6subtype" value="" /> 
+        <input type="hidden" name="tokens" value= "" /> 
+        <input type="hidden" name="score_transition" value="" /> 
+        <input type="hidden" name="score_strict" value="" /> 
+        <input type="hidden" name="nobots" value="" />
+	<input type="hidden" name="subdomain" />
+
+
+<table summary="enable comment form">
+          <tr>
+            <td>
+              <b>Finalidade do comentário</b>:
+            </td><td>
+           
+            <select name="purpose" onchange='jQuery("#contact_form").show();'>
+<option value="-">Finalidade do comentário</option>
+<option value="questions">Perguntas sobre resultados dos testes</option>
+<option value="bug">Comunique um problema com o diagnóstico</option>
+<option value="suggestion">Sugestão</option>
+<option value="cheersjeers">Aplausos ou Vaias</option>
+</select>
+</td>
+          </tr>
+
+</table>
+
+
+
+        <table summary="contact form" id="contact_form" style="display:none">
+
+
+
+
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>Seu e-mail, caso você me permita contactá-lo. <i>Isso é necessário caso você queira uma resposta.</i></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" name="contact" /></td>
+          </tr>
+
+
+          <tr>
+            <td>Qualquer informação que você acredite ser útil (modelo de seu roteador, presença de firewall, tipo de proxy, etc.). Suas impressões gerais também são válidas.</td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="notes" rows="8" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div id="help_plugins" style="display:none">
+                Os testes baseados em javascript parecem ter falhado. Isso pode ter relação com algum plugin ou extensão de seu navegador. Por favor, indique quais plugins e extensões estão habilitadas nesse navegador.
+              </div>
+
+              <div id="help_generic" style="display:none">
+                Se você tem uma veia técnica, por favor, copie e cole a saída dos seguintes comandos:
+                <br/>
+                <code>netstat -nr</code><br/>
+                <code>ifconfig -a</code><br/>
+                Copie a saída dos comandos na caixa abaixo. Isso me ajudará a confirmar ou refutar teorias em relação à sua pergunta.
+              </div>
+
+              <div id="help_linux" style="display:none">
+                Se você tem uma veia técnica, por favor, copie e cole a saída dos seguintes comandos:
+                <br/>
+                <code>ip -f inet6 route show</code> <br/>
+                <code>ip -f inet6 addr</code> <br/>
+                Copie a saída dos comandos na caixa abaixo. Isso me ajudará a confirmar ou refutar teorias em relação à sua pergunta.
+              </div>
+
+              <div id="help_windows" style="display:none">
+                Se você tem uma veia técnica, por favor, abra uma janela do "Prompt" ou "cmd" e execute esses três comandos:
+		<br/>
+                <code>  ipconfig /all</code><br/>
+                <code>  netsh interface ipv6 show teredo</code><br/>
+                <code>  netsh interface ipv6 show route</code><br/>
+                Copie a saída dos comandos na caixa abaixo. Isso me ajudará a confirmar ou refutar teorias em relação à sua pergunta.
+              </div>
+
+ 
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="comments" rows="10" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="submit" value="Enviar resultados" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+<!-- STOP mail.inc -->
+
+
+      </div>
+      
+      <div id="tab_helpdesk" style="display:none">
+        <!--START helpdesk.inc -->
+
+<div id="helpdesk" style="display:block">
+
+    <div id="helpdesk_content">
+
+      <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img src="images/spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+      <p>Você obterá informações de HelpDesk assim que o teste for finalizado.</p>
+    </div>
+
+</div>
+
+<p></p>
+<p>
+<span style="font-size: x-small">
+More information about this page, including how to bookmark it:
+<a href="faq_helpdesk.html">faq_helpdesk.html</a>.</span>
+</p>
+
+
+
+<div id=replayurldiv  style="display:none">
+<hr/>
+<div>
+<p>
+Se seu HelpDesk de Internet solicitar que você envie a 'url de resultados', copie e cole a seguinte URL.
+Note que isto vai compartilhar sua informação atual de endereço(s) IP.
+Não recomendamos postar este link em sites públicos, como por exemplo fóruns de internet.
+</p>
+<div id=replayurl>-</div>
+<p>
+Na maioria dos computadores, você pode clicar com o botão direito na URL acima e selecionar "Copiar".
+</p>
+</div>
+</div>
+
+
+
+
+
+<!-- STOP helpdesk.inc -->
+
+
+      </div>
+      <!-- Hide these until needed -->
+      <div id="tab_faq" style="display:none">
+      </div>
+      <div id="tab_popup" style="display:none">
+      </div>
+      
+      
+      <div id="tab_debug" style="display:none">
+        
+  <div id="debug" style="display:block">
+
+  
+
+
+
+  <div>Debug info follows.  If requested, you can  <a href="index.html.pt_BR.html#" class="tabbutton_tests"  onclick='return GIGO.debuggercomments()'>Send this debug info</a> for analysis. </div>
+
+  <div id="debug_dump"></div>
+
+  <div id="debug_eof"></div>
+
+  </div>
+
+
+      </div>
+
+      <div id="tab_sites" style="display:none">
+        
+  <div id="other_sites" style="display:block">
+
+
+  <div class="answer">
+    <b>Porque você tem IPv6</b>, adicionamos esta aba para mostrar a você se você consegue ou não alcançar outros sites IPv6 na Internet. Considere notificar seu Provedor de Serviços caso algum dos sites não esteja funcionando. Se você for o Provedor de Serviços, você pode clicar no link de informações para ver quais URLs de teste estão sendo utilizadas.
+  </div>
+
+  <div class="answer">
+    <p><b>Dica</b>: Você pode ordenar as colunas (clique na primeira linha); <a href="index.html.pt_BR.html#" onclick="GIGO.test_sites(2); return false;">clique aqui</a> para verificar novamente seu acesso até os mirrors.
+    </p>
+  </div>
+    
+    
+    <div id="sitestablediv">(generated by javascript)</div>
+  
+<!--   GIGO.test_contents(2); -->
+
+                 
+
+  <div class="answer">
+    <p>É muito fácil ser adicionado a esta lista para verificações básicas. Basta fornecer duas URLs de imagem (uma apenas IPv4, uma apenas IPv6), para Jason Fesler &lt;jfesler@gigo.com&gt;. Mande também o endereço do seu site e o nome da sua organização.
+    </p>
+  </div>
+
+  <div class="answer">
+    Mirros completos são muito bem vindos, sendo públicos ou privados. Por favor veja <a href="https://github.com/falling-sky/source/wiki">a wiki</a> para detalhes.
+  </div>
+
+  
+  </div>
+
+
+      </div>
+   
+
+    </div>
+  </div>
+</div>
+
+
+<center>
+<div id="social">
+<div id="facebook_like"></div>
+<div id="twitter_tweet"></div>
+</div>
+</center>
+
+<div id="logo">
+ <div id="logo_img"></div>
+ <div id="logo_operator"></div>
+</div>
+
+
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2016 Jason Fesler. Todos os direitos reservados.  Version 1.1.548 (19ae914)<br/>
+
+ <a href="mirrors.html">Espelhos</a> |
+<!-- <a href="mission.html">Missão</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">Fonte</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">E-mail</a>
+ - &nbsp; - 
+<a href="attributions.html">Atribuições</a>
+  
+<span class="ghost">
+  |  <a href="index.html.pt_BR.html#" onclick=" GIGO.showdebug(); return false;">Debug</a> 
+</span>
+
+
+
+  |
+
+<a href="index.html.pt_BR.html#" onclick="return help_page('locale.html','Locale')">
+<img src="images/icon_987_red.png" height="20" border="0" />
+pt_BR 
+</a>
+97.97%
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+Este site é um espelho do test-ipv6.com. O que está aqui pode ou não pode estar de acordo com o seu mantenedor.
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() { 
+  try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+  });   
+  </script>
+
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+

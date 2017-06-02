@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Test your IPv6.</title>
+
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="SHORTCUT ICON" href="images/favicon.ico" />
+  <link rel="stylesheet" href="index.css%3Fversion=1.1.548.css" type="text/css" />
+  <link rel="apple-touch-icon" href="images/knob_info.png"/> 
+  <meta property="og:image" content="http://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="site/config.js%3Fversion=1.1.548"></script>
+   <script type="text/javascript"  src="index.js.en_US%3Fversion=1.1.548"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+  
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="index.html" 
+>Test IPv6</a></li>
+
+
+
+<li><a href="faq.html" 
+>FAQ</a></li>
+
+
+
+<li><a href="mirrors.html" 
+>Mirrors</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+<li><a href="faq_helpdesk.html#"
+id="current">Help Desk Information</a></li>
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="stats.html" tabname="stats"
+  >stats</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="locale.html">
+<img src="images/icon_987_red.png" height="32" border="0" />
+</a>
+</div>
+
+</div>
+
+
+
+<div id=content>
+<h1 id="title">Help Desk Information</h1>
+
+  <div class="question">
+    Q: What is the Help Desk tab for?
+  </div>
+
+  <div class="answer">
+    This tab is intended to help provide a brief, concise explanation of your connectivity. This can be read over the phone, if needed, to a service provider. This tab has less hand-holding; it is intended for a help desk to understand (as compared to an end user).
+    <p>
+    This special instance shares in a very compact way:
+    <ul>
+    <li>Status of each protocol</li>
+    <li>Warn of slow/timeout</li>
+    <li>Warn of MTU</li>
+    <li>Status of reachability to “other sites” (as compact as possible)</li>
+    <li>IP address shown, in case tech support needs it.</li>
+    <li>List of unreachable sites, if any</li>
+    </ul>
+    
+    </p>
+  </div>
+  
+  <div class="question">
+   Q: What is the easiest way to send users to the Help Desk tab?
+  </div>
+  <div class="answer">
+  There are several ways to do it. Some of these are more obvious than the others when reading; some of them may be easier when read over the phone. In all of these cases, the "Help Desk" tab is moved to be the first and default tab shown to the user, instead of exposing the more detailed user-facing page.
+
+  <ul>
+  <li><a target=_new href='helpdesk.html'>test-ipv6.com/helpdesk</a> (preferred for printed documentation)</li>
+  <li><a target=_new href='isp.html'>test-ipv6.com/isp</a></li>
+  <li><a target=_new href='http://helpdesk.test-ipv6.com/'>helpdesk.test-ipv6.com</a></li>
+  <li><a target=_new href='http://isp.test-ipv6.com/'>isp.test-ipv6.com</a></li>
+  </br>&nbsp;</li>
+  <li><a target=_new href='http://testv6.com/helpdesk'>testv6.com/helpdesk</a>
+  (spoken English, "test vee six dot com slash helpdesk")</li>
+  <li><a target=_new href='http://testv6.com/isp'>testv6.com/isp</a></li>
+  <li><a target=_new href='http://helpdesk.testv6.com/'>helpdesk.testv6.com</a></li>
+  <li><a target=_new href='http://isp.testv6.com/'>isp.testv6.com</a></li>
+  </ul>
+
+  Mirror sites may not have all the fancy DNS names; they are more likely to be useful like this:
+    
+  <ul>
+  <li><a target=_new href='helpdesk.html'>[this mirror]/helpdesk</a></li>
+  <li><a target=_new href='isp.html'>[this mirror]/isp</a></li>
+  </ul>
+  </div> 
+
+</div>
+
+
+
+
+  <div class="question">
+    Q: What are the Help Desk codes?
+  </div>
+
+  <div class="answer">
+ These are meant to offer a quick, short way for your customer to tell you the status of their Internet connectivity, as validated by this site. They are also meant to be easy to memorize.
+
+<table border=1>
+<tr>
+<th>code</th>
+<th>short description</th>
+<th>recommended action</th>
+</tr>
+
+<td>112</td>
+<td>IPv4, plus Broken IPv6</td>
+<td>IPv6 related attempts are timing out.  This is not a quick fix.  Verify
+the proper IPv6 address has been provisioned; verify the IPv6 route is
+correct.  Check for unexpected or outdated firewalls and firewall rules.  Other ideas are at <a href="broken.html">broken.html</a>.
+Of all the status codes, this is the one that suggests that users will have
+problems with many major web sites today, due to timeouts with IPv6.</br>
+(You can remember this code as the Emergency number for many parts of the
+world; much like America's 911).
+</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>IPv4 only</td>
+<td>Provision working IPv6 to the user; ensure the user has a modern home
+router and a modern operating system.  Note that Teredo might have been
+detected; but if it was, we found that it was not used for normal named
+web sites (only for raw IPv6 address connections).</td>
+</tr>
+
+<tr>
+<td>4t</td>
+<td>IPv4 plus Teredo</td>
+<td>Provision working IPv6 to the user; ensure the user has a modern home
+router and a modern operating system.  Teredo will be ignored when a useful
+IPv6 service is found.</td>
+</tr>
+
+<tr>
+<td>46</td>
+<td>IPv4 + IPv6</td>
+<td>Rejoice!</td>
+</tr>
+
+<tr>
+<td>46t</td>
+<td>Dual Stack, Possible Tunnel</td>
+<td>This is not necesarily an error. Make sure that the ISP mentioned for
+both IPv4 and IPv6 look reasonable.</td>
+</tr>
+
+<tr>
+<td>624</td>
+<td>6to4</td>
+<td>Provision working IPv6 to the user; ensure the user has a modern home
+router and a modern operating system.  6to4 will be ignored when a useful
+IPv6 service is found.</td>
+</tr>
+
+
+<tr>
+<td>64</td>
+<td>NAT64</td>
+<td>This is probably not an error. We found IPv6 to work fine;
+but we found IPv4 only works with named urls (and not raw 
+numbers).  This may break a few applications like Skype,
+but otherwise IPv4 mostly works.
+</td>
+</tr>
+
+
+<td>64t</td>
+<td>NAT64, Possible Tunnel</td>
+<td>A cross between '64' and '46t' above.  NAT64 is in use;
+and the ISP is possibly different for IPv4 vs IPv6.
+Check the ISP names for sensible values.
+</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>IPv6 only.</td>
+<td>This is expected in some lab and experimental setups only.  Note that to
+reach this status, the IPv6-only user will have to connect to 
+<a href="http://ipv6.test-ipv6.com">ipv6.test-ipv6.com</a> (or similar
+mirror sites).
+</td>
+</tr>
+</table>
+
+
+
+
+  <div class="question">
+    Q: How can I recommend changes to the Help Desk tab?
+  </div>
+
+  <div class="answer">
+ Suggestions are welcome; especially from those operating help desks. This tab is really for you - not for the consumer. Please keep in mind that we want to keep the tab brief, concise, and easy to read for the average user over the phone to your help desk team. Send suggestions to jfesler@test-ipv6.com .
+  </div>
+
+
+
+</div>
+
+
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2016 Jason Fesler. All rights reserved.  Version 1.1.548 (19ae914)<br/>
+
+ <a href="mirrors.html">Mirrors</a> |
+<!-- <a href="mission.html">Mission</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">Source</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">Email</a>
+ - &nbsp; - 
+<a href="attributions.html">Attributions</a>
+
+
+
+  |
+
+<a href="faq_helpdesk.html#" onclick="return help_page('locale.html','Locale')">
+<img src="images/icon_987_red.png" height="20" border="0" />
+en_US 
+</a>
+
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+This is a mirror of test-ipv6.com. The views expressed here may or may not reflect the views of the mirror owner.
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() { 
+  try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+  });   
+  </script>
+
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+
